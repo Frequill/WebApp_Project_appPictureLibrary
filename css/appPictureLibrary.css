@@ -1,0 +1,28 @@
+html,
+body {
+	margin: 0;
+	padding: 0;
+  box-sizing: border-box;
+}
+
+.FlexWrap {
+  background-color: indigo;
+	font-family: 'Oswald', sans-serif;
+  height: 100%;
+  width: 100%;
+  
+  display: flex;
+  flex-wrap: wrap;          /* test with wrap nowrap */
+  align-items: center;      /* alignment along cross axis - center flex-start flex-end */
+  justify-content:space-evenly;  /* alignment along main axis - center flex-start flex-end space-evenly space-between space-around */
+}
+
+.FlexItem {
+  width: 200px;            /* fixed size will demonstrate the wrap */
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
