@@ -45,6 +45,4 @@ function renderImage(src, tag) {
   imgFlex.appendChild(div);
 };
 
-
-
-
+/* Test comment for first commit! */
