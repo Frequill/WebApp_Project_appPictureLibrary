@@ -11,8 +11,8 @@ let library;  //Global varibale, Loaded async from the current server in window.
 //use the DOMContentLoaded, or window load event to read the library async and render the images
 window.addEventListener('DOMContentLoaded', async () => {
 
-library = await lib.pictureLibraryBrowser.fetchJSON(libraryJSON);  //reading library from JSON on local server 
-//library = lib.pictureLibraryBrowser.createFromTemplate();  //generating a library template instead of reading JSON
+// library = await lib.pictureLibraryBrowser.fetchJSON(libraryJSON);  //reading library from JSON on local server 
+library = lib.pictureLibraryBrowser.createFromTemplate();  //generating a library template instead of reading JSON
 
 for (const album of library.albums) {
 
@@ -44,5 +44,21 @@ function renderImage(src, tag) {
   const imgFlex = document.querySelector('.FlexWrap');
   imgFlex.appendChild(div);
 };
+
+document.getElementById("toros01").addEventListener("click", displayDate); /* FULLT fungerande action listiner! */
+
+function displayDate() {
+  document.getElementById("toros01").innerHTML = Date();
+}
+
+console.log(libraryJSON.stringify);
+
+console.log(libraryJSON(0));
+console.log(libraryJSON[0]);
+console.log(libraryJSON);
+
+//obj.valueOf(Object.keys(obj).indexOf('String_to_Find'))
+
+// console.log(stringify.libraryJSON(0));
 
 /* Test comment for first commit! */
