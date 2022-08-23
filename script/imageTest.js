@@ -14,6 +14,11 @@ function noImgHover() {
     document.getElementById("imageTest").src = planets;
 }
 
+document.getElementById("rateButton").addEventListener("click", rButtonFunc);
+
+function rButtonFunc() {
+    document.getElementById("rateButton").innerHTML = "5 out of 5!";
+}
 
 
 /* Capitalizes "comment" when hovered over once */
@@ -23,9 +28,40 @@ function commentFunc() {
     document.getElementById("comment01").innerHTML = "COMMENT!";
 }
 
-/* Actionlistiner for "RATE" button */
-document.getElementById("rateButton").addEventListener("click", rateButtonFunc);
+/* Actionlistiner for "commentSubmit" button */
+document.getElementById("commentSubmitButton").addEventListener("click", commentButtonFunc);
+
+function commentButtonFunc() {
+    const result = "";
+    
+    if (document.getElementById("commentInput").notEmpty){
+        result = "";
+        document.getElementById("commentText").innerHTML = result;
+    }
+   
+    /* Send "RESULT" variable to a DB or a textdocument */
+}
+
+/* Actionlistiner for "rateSubmit" button        I am so happy that I managed to make some functional JS x) */
+document.getElementById("rateSubmitButton").addEventListener("click", rateButtonFunc);
 
 function rateButtonFunc() {
-    document.getElementById("rateButton").innerHTML = "5 out of 5!";
+    const result = 0;
+    
+    if (document.getElementById("oneStar").checked){
+        result = 1;
+        document.getElementById("dynamicText").innerHTML = "1 out of 3...";
+    }
+
+    else if (document.getElementById("twoStars").checked){
+        result = 2;
+        document.getElementById("dynamicText").innerHTML = "2 out of 3...";
+    }
+
+    else if (document.getElementById("threeStars").checked){
+        result = 3;
+        document.getElementById("dynamicText").innerHTML = "3 out of 3!";
+    }
+   
+    /* Send "RESULT" variable to a DB or a textdocument */
 }
