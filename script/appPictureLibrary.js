@@ -45,7 +45,7 @@ function renderImage(src, tag) {
   imgFlex.appendChild(div);
 };
 
-document.getElementById("toros01").addEventListener("click", displayDate); /* FULLT fungerande action listiner! */
+document.getElementById("toros01").addEventListener("click", displayDate); /* FULLT fungerande action listener! */
 
 function displayDate() {
   document.getElementById("toros01").innerHTML = Date();

@@ -1,0 +1,67 @@
+/*
+@font-face {
+    font-family: 'Inter-V';
+    src: url('../fonts/inter.var.woff2') format('woff2-variations');
+    font-weight: 100 900;
+    font-display: fallback;
+    font-style: oblique 0deg 10deg;
+}
+
+:root{
+    --FontCustom: 'Inter-V';
+}
+*/
+
+#full-body{
+    background-image: url("/app-data/library/pictures/main-menu-background-img/toros-tate.jpg");
+}
+
+.nav-flex-container {
+    /* background-color: rgba(34, 33, 33, 0.795); */
+    /* background-image: url("/app-data/library/pictures/main-menu-background-img/toros-tate.jpg"); */
+    min-width: 90vw;
+    min-height: 90vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /* TEST */ flex-direction: column;
+}
+
+.navBar {
+    font-family: Fantasy, Copperplate;
+    font-size: 25px;
+    text-decoration: none;
+    border: 10rem;
+    border-color: black;
+    border-radius: 4rem;
+    background-color: orange;
+    padding: 20px;
+    margin: 20px;
+    justify-content: space-evenly;
+}
+
+.navBar:hover {
+    transition: 0.25s;
+    text-decoration: underline;
+    background-color: rgb(255, 194, 80);
+    /* Padding + margin only goes right and left so other buttons in flexbox are NOT squished on hover! */
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-left: 25px;
+    margin-right: 25px;
+    text-shadow: 0 0 10px #ffffff;
+}
+
+.greetingLabel {
+    float: inline-start;
+    font-family: Fantasy, Copperplate;
+    font-size: 40px;
+    text-decoration-line: underline;
+    text-align: center;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px;
+    text-shadow: 0 0 10px #ffffff;
+}
