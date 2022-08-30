@@ -13,13 +13,41 @@
 	<main class="FlexWrapper">
 
 		<div class="flex-parent-element">
-			<a href="#" onclick="history.back()"><header id="back-button" class="FlexItem FlexHeader" >Tillbaka</header></a>
-			<header id="bild-titel" class="FlexItem FlexHeader">Bildens titel</header>
+			<a href="#" onclick="history.back()">
+				<header id="back-button" class="FlexItem FlexHeader">
+					Tillbaka
+				</header>
+			</a>
+			<header id="bild-titel" class="FlexItem FlexHeader">
+				Bildens titel
+			</header>
 		</div>
 
-		<article class="FlexItem FlexContent"></article>
-		<aside class="FlexItem FlexSideTwo">Kommentarer</aside>
-		<footer class="FlexItem FlexFooter">Betygsätt bilden!</footer>
+		<article class="FlexItem FlexContent">
+			<!-- här inne ligger bilden -->
+		</article>
+
+		<aside class="FlexItem FlexSideTwo">
+			Kommentarer
+		</aside>
+
+		<!--Credit goes to https://codepen.io/knyttneve/pen/EBNqPN -->
+		<footer class="FlexItem FlexFooter"> Betygsätt bilden!
+			<div class="rating">
+				<input type="radio" name="rating" id="rating-5">
+				<label for="rating-5"></label>
+				<input type="radio" name="rating" id="rating-4">
+				<label for="rating-4"></label>
+				<input type="radio" name="rating" id="rating-3">
+				<label for="rating-3"></label>
+				<input type="radio" name="rating" id="rating-2">
+				<label for="rating-2"></label>
+				<input type="radio" name="rating" id="rating-1">
+				<label for="rating-1"></label>
+			</div>
+		</footer>
+		<!---->
+
 	</main>
 </body>
 
