@@ -17,8 +17,6 @@
 }
 
 .nav-flex-container {
-    /* background-color: rgba(34, 33, 33, 0.795); */
-    /* background-image: url("/app-data/library/pictures/main-menu-background-img/toros-tate.jpg"); */
     min-width: 90vw;
     min-height: 90vh;
     display: flex;

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selected Image</title>
+</head>
+
+<body>
+    <img id="imageTest"
+        src="https://media.istockphoto.com/photos/rendered-galaxy-space-scene-with-planets-picture-id1298997952?b=1&k=20&m=1298997952&s=170667a&w=0&h=DsD2R0U-Z6RZOAtoVH1pPVDvlAFMEgaZtqX-Y936zTo="
+        alt="Space change to Tate">
+    <p id="rateButton">Rate image</p>
+    </br>
+    <p id="comment01">Comment</p>
+    </br>
+
+    // Ser du mig
+
+    <form action="/action_page.php"> <!-- action avgör vart submit skickar input -->
+        <label for="title">Title:</label>
+        <input id="titleInput" type="text" id="title" name="title"><br><br>
+        <label for="comment">Comment:</label>
+        <p id="commentText"></p>
+        <input id="commentInput" type="text" id="comment" name="comment"><br><br>
+        <input id="commentSubmitButton" type="submit" value="Submit Comment">
+    </form>
+
+    <p id="dynamicText">Rate Image:</p>
+
+    <form>                           <!-- action avgör vart submit skickar input -->
+        <input type="radio" id="oneStar" name="rating" value="oneStar">
+        <label for="oneStar">1</label><br>
+        <input type="radio" id="twoStars" name="rating" value="twoStars">
+        <label for="twoStars">2</label><br>
+        <input type="radio" id="threeStars" name="rating" value="threeStars">
+        <label for="threeStars">3</label>
+        </br>
+        <button id="rateSubmitButton" type="button">RATE!</button>
+    </form>
+
+    <script type="module" src="./script/imageTest.js"></script>
+</body>
+
+</html>
