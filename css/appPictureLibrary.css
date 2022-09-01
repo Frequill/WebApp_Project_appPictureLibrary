@@ -50,7 +50,7 @@ img {
 .side-nav-bar {}
 
 .navBar {
-  font-family: Fantasy, Copperplate;
+  font-family: Copperplate, Fantasy, monospace;
   font-size: 25px;
   text-decoration: none;
   border: 10rem;
@@ -62,7 +62,7 @@ img {
 }
 
 .navBarTwo {
-  font-family: Copperplate, Fantasy;
+  font-family: Copperplate, Fantasy, monospace;
   font-size: 15px;
   text-decoration: none;
   text-align: center;

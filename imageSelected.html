@@ -29,6 +29,23 @@
 
 		<aside class="FlexItem FlexSideTwo">
 			Kommentarer
+
+			<!-- <commentsArea cols="500" rows="500" id="allCommentsArea">
+			Kommentarer dyker upp här
+			</commentsArea> -->
+
+			<div id="comments-display-field">
+				As you can see, once there's enough text in this box, the box will grow scroll bars... that's why we
+				call it a scroll box! You could also place an image into the scroll box.
+			</div>
+
+			<form id="comments-input" action="/form/submit" method="post">
+				<!-- <label for="text"></label> -->
+				<br>
+				<textarea id="comment-field-text" name="text"></textarea>
+				<br />
+				<input type="submit" value="Submit" name="comment-field-submit">
+			</form>
 		</aside>
 
 		<!--Credit goes to https://codepen.io/knyttneve/pen/EBNqPN -->
@@ -46,7 +63,7 @@
 				<label for="rating-1"></label>
 			</div>
 		</footer>
-		<!---->
+		<!--Credit goes to https://codepen.io/knyttneve/pen/EBNqPN -->
 
 	</main>
 </body>

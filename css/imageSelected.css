@@ -1,3 +1,5 @@
+/* MOBILE FIRST */
+
 html,
 body {
   margin: 0px;
@@ -28,7 +30,6 @@ body {
   text-decoration-color: white; */
   /* min-height: 5%; */
   max-height: 0%;
-  /* order: 1; */
 }
 
 .FlexContent {
@@ -37,7 +38,6 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   flex: 0 0 auto;
-  /* order: 2; */
   min-height: 70%;
 }
 
@@ -49,10 +49,12 @@ body {
   text-align: center;
   color: white;
   flex: 0.5 0 auto;
-  /* order: 4; */
+
   margin-right: 50px;
   margin-bottom: 20px;
+  min-height: 400px;
 
+  display: inline-block; /* I ADDED THIS NOW FOR TEST HIHI REMOVE ME IF PROBLEM PERSISTS! //Julius Thomsen */
 
   background: #8A2387;
   /* fallback for old browsers */
@@ -65,10 +67,127 @@ body {
 
 .FlexFooter {
   background-color: steelblue;
-  /* min-height: 5%; */
-  max-height: 5%;
-  /* order: 5; */
+  min-height: 13.6%;
+  text-align: center;
 }
+
+#back-button {
+  border-width: 2rem;
+  border-radius: 15rem;
+  background-color: orange;
+  color: purple;
+  text-align: center;
+  width: 50px;
+  padding-bottom: 35px;
+}
+
+#back-button:hover {
+  transition: 0.25s;
+  text-decoration: underline;
+  background-color: rgb(255, 194, 80);
+  text-shadow: 0 0 10px #ffffff;
+  cursor: pointer;
+}
+
+#bild-titel {
+  padding-bottom: 35px;
+  border: 2px;
+  border-color: black;
+  border-radius: 25rem;
+  background-color: white;
+  color: black;
+  border-style: solid;
+  max-width: 25%;
+  margin-left: 19%;
+  margin-top: 21px;
+  text-align: center;
+  /* position: absolute; */
+}
+
+#comments-display-field {
+  height: 380px;
+  width: 400px;
+  border: 2px solid #ccc;
+  font: 16px/26px Georgia, Garamond, Serif;
+  overflow: auto;
+}
+
+#comments-input {
+
+  display: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+/* 
+Credit goes to https://codepen.io/knyttneve/pen/EBNqPN
+*/
+
+.rating {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  overflow: hidden;
+  flex-direction: row-reverse;
+  height: 50px;
+  position: relative;
+}
+
+.rating>input {
+  display: none;
+}
+
+.rating>label {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  margin-top: auto;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='126.729' height='126.73'%3e%3cpath fill='%23e3e3e3' d='M121.215 44.212l-34.899-3.3c-2.2-.2-4.101-1.6-5-3.7l-12.5-30.3c-2-5-9.101-5-11.101 0l-12.4 30.3c-.8 2.1-2.8 3.5-5 3.7l-34.9 3.3c-5.2.5-7.3 7-3.4 10.5l26.3 23.1c1.7 1.5 2.4 3.7 1.9 5.9l-7.9 32.399c-1.2 5.101 4.3 9.3 8.9 6.601l29.1-17.101c1.9-1.1 4.2-1.1 6.1 0l29.101 17.101c4.6 2.699 10.1-1.4 8.899-6.601l-7.8-32.399c-.5-2.2.2-4.4 1.9-5.9l26.3-23.1c3.8-3.5 1.6-10-3.6-10.5z'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 76%;
+  transition: .3s;
+}
+
+.rating>input:checked~label,
+.rating>input:checked~label~label {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='126.729' height='126.73'%3e%3cpath fill='%23fcd93a' d='M121.215 44.212l-34.899-3.3c-2.2-.2-4.101-1.6-5-3.7l-12.5-30.3c-2-5-9.101-5-11.101 0l-12.4 30.3c-.8 2.1-2.8 3.5-5 3.7l-34.9 3.3c-5.2.5-7.3 7-3.4 10.5l26.3 23.1c1.7 1.5 2.4 3.7 1.9 5.9l-7.9 32.399c-1.2 5.101 4.3 9.3 8.9 6.601l29.1-17.101c1.9-1.1 4.2-1.1 6.1 0l29.101 17.101c4.6 2.699 10.1-1.4 8.899-6.601l-7.8-32.399c-.5-2.2.2-4.4 1.9-5.9l26.3-23.1c3.8-3.5 1.6-10-3.6-10.5z'/%3e%3c/svg%3e");
+}
+
+
+.rating>input:not(:checked)~label:hover,
+.rating>input:not(:checked)~label:hover~label {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='126.729' height='126.73'%3e%3cpath fill='%23d8b11e' d='M121.215 44.212l-34.899-3.3c-2.2-.2-4.101-1.6-5-3.7l-12.5-30.3c-2-5-9.101-5-11.101 0l-12.4 30.3c-.8 2.1-2.8 3.5-5 3.7l-34.9 3.3c-5.2.5-7.3 7-3.4 10.5l26.3 23.1c1.7 1.5 2.4 3.7 1.9 5.9l-7.9 32.399c-1.2 5.101 4.3 9.3 8.9 6.601l29.1-17.101c1.9-1.1 4.2-1.1 6.1 0l29.101 17.101c4.6 2.699 10.1-1.4 8.899-6.601l-7.8-32.399c-.5-2.2.2-4.4 1.9-5.9l26.3-23.1c3.8-3.5 1.6-10-3.6-10.5z'/%3e%3c/svg%3e");
+}
+
+#rating-1:checked~.emoji-wrapper>.emoji {
+  transform: translateY(-100px);
+}
+
+#rating-2:checked~.emoji-wrapper>.emoji {
+  transform: translateY(-200px);
+}
+
+#rating-3:checked~.emoji-wrapper>.emoji {
+  transform: translateY(-300px);
+}
+
+#rating-4:checked~.emoji-wrapper>.emoji {
+  transform: translateY(-400px);
+}
+
+#rating-5:checked~.emoji-wrapper>.emoji {
+  transform: translateY(-500px);
+}
+
+/* 
+Credit goes to https://codepen.io/knyttneve/pen/EBNqPN
+*/
+
+/* MOBILE FIRST */
+/* ------------------------------------ */
+/* DESKTOP FULL SCREEN */
 
 @media (min-width: 600px) {
   .FlexWrapper {
@@ -78,7 +197,6 @@ body {
 
   .FlexHeader {
     width: 100%;
-    /* order: 1; */
     /* flex: 1; */
     /* border: 2px solid blueviolet; */
     margin: 10px;
@@ -108,28 +226,50 @@ body {
     margin-left: 55px;
     margin-right: 55px;
     */
+    /*
     padding-left: 55px;
     padding-right: 55px;
+    */
   }
 
   .FlexContent {
     flex: 3 0 auto;
-    /* order: 3; */
+    /* contain: ; */
   }
 
   .FlexSideOne {
     width: 150px;
-    /* order: 2; */
+
   }
+
+  #comments-input {
+    display: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+  }
+
 
   .FlexSideTwo {
     width: 150px;
-    /* order: 4; */
+    border-style: groove;
+    border-width: 6px;
+    border-color: white;
+    border-radius: 2rem;
+    text-align: center;
+    color: white;
+    flex: 0.5 0 auto;
 
-    /* visibility: hidden; */
-    /* used to hide an element but it remian in the layout */
-    /* display: none; */
-    /* used to hide an element which should no longer be part of the layout */
+    display: inline-block; /* I ADDED THIS NOW FOR TEST HIHI REMOVE ME IF PROBLEM PERSISTS! //Julius Thomsen */
+    margin-right: 50px;
+    margin-bottom: 20px; 
+
+    background: #8A2387;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #F27121, #E94057, #8A2387);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #F27121, #E94057, #8A2387);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   }
 
   .FlexFooter {
@@ -154,125 +294,63 @@ body {
     max-width: 25%;
     margin-left: 19%;
     margin-top: 21px;
-
     text-align: center;
+    /* position: absolute; */
+  }
+
+  #allCommentsArea {
+    overflow-y: scroll;
+    min-width: 20px;
+    min-height: 20px;
+    align-items: flex-end;
+
+    display: inline-block;
+  }
+
+  #comment-field-text {
+    min-width: 300px;
+    min-height: 50px;
+    display: flex;
+    align-items: flex-end;
+
+    display: inline-block;
+  }
+
+  #comments-display-field {
+    height: 380px;
+    width: 335px;
+    border: 2px solid #ccc;
+    font: 16px/26px Georgia, Garamond, Serif;
+    overflow: auto;
+    display: inline-block;
+  }
+
+}
+
+/* DESKTOP FULL SCREEN */
+/* ------------------------------------ */
+/* DESKTOP SMALL SCREEN */
+
+@media (max-width: 1270px) {
+  #comment-field-text {
+    min-width: 200px;
+    min-height: 50px;
+  }
+
+  #comments-input {
+    display: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #comments-display-field {
+    height: 380px;
+    width: 250px;
+    border: 2px solid #ccc;
+    font: 16px/26px Georgia, Garamond, Serif;
+    overflow: auto;
   }
 }
 
-/* 
-Credit goes to https://codepen.io/knyttneve/pen/EBNqPN
-*/ 
-
-.container {
-  background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/concrete-texture.png");
-  display: flex;
-  flex-wrap: wrap;
-  height: 100vh;
-  align-items: center;
-  justify-content: center;
-  padding: 0 20px;
-}
-
-.rating {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  overflow: hidden;
-  flex-direction: row-reverse;
-  height: 50px;
-  position: relative;
-}
-
-.rating-0 {
-  filter: grayscale(100%);
-}
-
-.rating > input {
-  display: none;
-}
-
-.rating > label {
-  cursor: pointer;
-  width: 40px;
-  height: 40px;
-  margin-top: auto;
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='126.729' height='126.73'%3e%3cpath fill='%23e3e3e3' d='M121.215 44.212l-34.899-3.3c-2.2-.2-4.101-1.6-5-3.7l-12.5-30.3c-2-5-9.101-5-11.101 0l-12.4 30.3c-.8 2.1-2.8 3.5-5 3.7l-34.9 3.3c-5.2.5-7.3 7-3.4 10.5l26.3 23.1c1.7 1.5 2.4 3.7 1.9 5.9l-7.9 32.399c-1.2 5.101 4.3 9.3 8.9 6.601l29.1-17.101c1.9-1.1 4.2-1.1 6.1 0l29.101 17.101c4.6 2.699 10.1-1.4 8.899-6.601l-7.8-32.399c-.5-2.2.2-4.4 1.9-5.9l26.3-23.1c3.8-3.5 1.6-10-3.6-10.5z'/%3e%3c/svg%3e");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 76%;
-  transition: .3s;
-}
-
-.rating > input:checked ~ label,
-.rating > input:checked ~ label ~ label {
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='126.729' height='126.73'%3e%3cpath fill='%23fcd93a' d='M121.215 44.212l-34.899-3.3c-2.2-.2-4.101-1.6-5-3.7l-12.5-30.3c-2-5-9.101-5-11.101 0l-12.4 30.3c-.8 2.1-2.8 3.5-5 3.7l-34.9 3.3c-5.2.5-7.3 7-3.4 10.5l26.3 23.1c1.7 1.5 2.4 3.7 1.9 5.9l-7.9 32.399c-1.2 5.101 4.3 9.3 8.9 6.601l29.1-17.101c1.9-1.1 4.2-1.1 6.1 0l29.101 17.101c4.6 2.699 10.1-1.4 8.899-6.601l-7.8-32.399c-.5-2.2.2-4.4 1.9-5.9l26.3-23.1c3.8-3.5 1.6-10-3.6-10.5z'/%3e%3c/svg%3e");
-}
-
-
-.rating > input:not(:checked) ~ label:hover,
-.rating > input:not(:checked) ~ label:hover ~ label {
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='126.729' height='126.73'%3e%3cpath fill='%23d8b11e' d='M121.215 44.212l-34.899-3.3c-2.2-.2-4.101-1.6-5-3.7l-12.5-30.3c-2-5-9.101-5-11.101 0l-12.4 30.3c-.8 2.1-2.8 3.5-5 3.7l-34.9 3.3c-5.2.5-7.3 7-3.4 10.5l26.3 23.1c1.7 1.5 2.4 3.7 1.9 5.9l-7.9 32.399c-1.2 5.101 4.3 9.3 8.9 6.601l29.1-17.101c1.9-1.1 4.2-1.1 6.1 0l29.101 17.101c4.6 2.699 10.1-1.4 8.899-6.601l-7.8-32.399c-.5-2.2.2-4.4 1.9-5.9l26.3-23.1c3.8-3.5 1.6-10-3.6-10.5z'/%3e%3c/svg%3e");
-}
-
-.emoji-wrapper {
-  width: 100%;
-  text-align: center;
-  height: 100px;
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.emoji-wrapper:before,
-.emoji-wrapper:after{
-  content: "";
-  height: 15px;
-  width: 100%;
-  position: absolute;
-  left: 0;
-  z-index: 1;
-}
-
-.emoji-wrapper:before {
-  top: 0;
-  background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 35%,rgba(255,255,255,0) 100%);
-}
-
-.emoji-wrapper:after{
-  bottom: 0;
-  background: linear-gradient(to top, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 35%,rgba(255,255,255,0) 100%);
-}
-
-.emoji {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: .3s;
-}
-
-.emoji > svg {
-  margin: 15px 0; 
-  width: 70px;
-  height: 70px;
-  flex-shrink: 0;
-}
-
-#rating-1:checked ~ .emoji-wrapper > .emoji { transform: translateY(-100px); }
-#rating-2:checked ~ .emoji-wrapper > .emoji { transform: translateY(-200px); }
-#rating-3:checked ~ .emoji-wrapper > .emoji { transform: translateY(-300px); }
-#rating-4:checked ~ .emoji-wrapper > .emoji { transform: translateY(-400px); }
-#rating-5:checked ~ .emoji-wrapper > .emoji { transform: translateY(-500px); }
-
-.feedback {
-  max-width: 360px;
-  background-color: #fff;
-  width: 100%;
-  padding: 30px;
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-items: center;
-  box-shadow: 0 4px 30px rgba(0,0,0,.05);
-}
+/* DESKTOP SMALL SCREEN */
+/* ------------------------------------ */

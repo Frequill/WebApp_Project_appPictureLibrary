@@ -26,7 +26,7 @@
 }
 
 .navBar {
-    font-family: Fantasy, Copperplate;
+    font-family: Copperplate, Fantasy, monospace;
     font-size: 25px;
     text-decoration: none;
     border: 10rem;
