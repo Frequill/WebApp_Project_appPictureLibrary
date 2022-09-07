@@ -68,6 +68,7 @@ class albumsTemplate {
                     headerImage: { value: `${pictureDir}/album-header/GSFC_20171208_Archive_e002151~small.jpg`, writeable: true, enumerable: true },
                     pictures: { value: picturesTemplate.hubbleTelescope(), writeable: true, enumerable: true }
                 })
+                
         ];
     }
 }
@@ -177,7 +178,17 @@ class picturesTemplate {
                     },
                     imgLoRes: { value: "PIA05982~small.jpg", writable: true, enumerable: true },
                     imgHiRes: { value: "PIA05982~orig.jpg", writable: true, enumerable: true }
-                })
+                }),
+                Object.create(prototypePicture,
+                    {
+                        id: { value: uniqueId(), writable: true, enumerable: true },
+                        title: { value: "Hubble Observes a New Saturn Storm", writable: true, enumerable: true },
+                        comment: {
+                            value: "Hubble Observes a New Saturn Storm", writable: true, enumerable: true
+                        },
+                        imgLoRes: { value: "fet-ros.jpg", writable: true, enumerable: true },
+                        imgLoRes: { value: "fet-ros.jpg", writable: true, enumerable: true }
+                    })
         ];
     }
     static newbornStars() {
