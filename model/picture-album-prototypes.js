@@ -11,19 +11,31 @@
 
 const prototypeAlbum = {
 
-    toString: function () { return `${this.id}: ${this.title} - ${this.comment}\n  pictureLocation: ${this.path}\n  albumImage: ${this.headerImage}` },
+    toString: function () { return `${this.id}: ${this.title} - ${this.comment}\n  pictureLocation: ${this.path}\n  albumImage: ${this.headerImage}` }
 }
 
 const prototypePicture = {
 
-    toString: function () { return `${this.id}: ${this.title}\n  imgLoRes: ${this.imgLoRes}\n  imgHiRes: ${this.imgHiRes}\n${this.comment}` },    
+    toString: function () { return `${this.id}: ${this.title}\n  imgLoRes: ${this.imgLoRes}\n  imgHiRes: ${this.imgHiRes}\n${this.comment}` }
 }
 
+let pictureTest = "pictureTest"
+let counter = 0;
+function uniqueId(){
+    counter++;
+    return pictureTest + counter;
+}
+
+/*
 //Helper function to get a unique id
 function uniqueId() {
     const dateString = Date.now().toString(36);
     const randomness = Math.random().toString(36).substring(2);
-    return dateString + randomness;
-};
+    const uniqueId = dateString + randomness;
 
+    console.log(uniqueId);
+
+    return uniqueId;
+};
+*/
 export {prototypeAlbum, prototypePicture, uniqueId}

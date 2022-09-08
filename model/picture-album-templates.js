@@ -88,7 +88,7 @@ class picturesTemplate {
                         , writable: true, enumerable: true
                     },
                     imgLoRes: { value: "8913467~small.jpg", writable: true, enumerable: true },
-                    imgHiRes: { value: "8913467~orig.jpg", writable: true, enumerable: true }
+                    // imgHiRes: { value: "8913467~orig.jpg", writable: true, enumerable: true }
                 }),
             Object.create(prototypePicture,
                 {
@@ -100,7 +100,7 @@ class picturesTemplate {
                         , writable: true, enumerable: true
                     },
                     imgLoRes: { value: "8913468~small.jpg", writable: true, enumerable: true },
-                    imgHiRes: { value: "8913468~orig.jpg", writable: true, enumerable: true }
+                    // imgHiRes: { value: "8913468~orig.jpg", writable: true, enumerable: true }
                 }),
             Object.create(prototypePicture,
                 {
@@ -112,7 +112,7 @@ class picturesTemplate {
                         , writable: true, enumerable: true
                     },
                     imgLoRes: { value: "GSFC_20171208_Archive_e002151~small.jpg", writable: true, enumerable: true },
-                    imgHiRes: { value: "GSFC_20171208_Archive_e002151~orig.jpg", writable: true, enumerable: true }
+                    // imgHiRes: { value: "GSFC_20171208_Archive_e002151~orig.jpg", writable: true, enumerable: true }
                 }),
             Object.create(prototypePicture,
                 {
@@ -124,7 +124,7 @@ class picturesTemplate {
                         , writable: true, enumerable: true
                     },
                     imgLoRes: { value: "PIA22574~small.jpg", writable: true, enumerable: true },
-                    imgHiRes: { value: "PIA22574~orig.jpg", writable: true, enumerable: true }
+                    // imgHiRes: { value: "PIA22574~orig.jpg", writable: true, enumerable: true }
                 })
         ];
     }
@@ -141,7 +141,7 @@ class picturesTemplate {
                         , writable: true, enumerable: true
                     },
                     imgLoRes: { value: "GSFC_20171208_Archive_e000332~small.jpg", writable: true, enumerable: true },
-                    imgHiRes: { value: "GSFC_20171208_Archive_e000332~orig.jpg", writable: true, enumerable: true }
+                    // imgHiRes: { value: "GSFC_20171208_Archive_e000332~orig.jpg", writable: true, enumerable: true }
                 }),
             Object.create(prototypePicture,
                 {
@@ -153,7 +153,7 @@ class picturesTemplate {
                         , writable: true, enumerable: true
                     },
                     imgLoRes: { value: "hubble-captures-vivid-auroras-in-jupiters-atmosphere_28000029525_o~small.jpg", writable: true, enumerable: true },
-                    imgHiRes: { value: "hubble-captures-vivid-auroras-in-jupiters-atmosphere_28000029525_o~orig.jpg", writable: true, enumerable: true }
+                    // imgHiRes: { value: "hubble-captures-vivid-auroras-in-jupiters-atmosphere_28000029525_o~orig.jpg", writable: true, enumerable: true }
                 }),
             Object.create(prototypePicture,
                 {
@@ -166,7 +166,7 @@ class picturesTemplate {
                         , writable: true, enumerable: true
                     },
                     imgLoRes: { value: "GSFC_20171208_Archive_e000332~small.jpg", writable: true, enumerable: true },
-                    imgHiRes: { value: "GSFC_20171208_Archive_e000332~orig.jpg", writable: true, enumerable: true }
+                    // imgHiRes: { value: "GSFC_20171208_Archive_e000332~orig.jpg", writable: true, enumerable: true }
                 }),
             Object.create(prototypePicture,
                 {
@@ -176,7 +176,7 @@ class picturesTemplate {
                         value: "Hubble Observes a New Saturn Storm", writable: true, enumerable: true
                     },
                     imgLoRes: { value: "PIA05982~small.jpg", writable: true, enumerable: true },
-                    imgHiRes: { value: "PIA05982~orig.jpg", writable: true, enumerable: true }
+                    // imgHiRes: { value: "PIA05982~orig.jpg", writable: true, enumerable: true }
                 })
         ];
     }
@@ -191,7 +191,7 @@ class picturesTemplate {
                         , writable: true, enumerable: true
                     },
                     imgLoRes: { value: "A Galactic Spectacle_4862916839_o~orig.jpg", writable: true, enumerable: true },
-                    imgHiRes: { value: "A Galactic Spectacle_4862916839_o~orig.jpg", writable: true, enumerable: true }
+                    // imgHiRes: { value: "A Galactic Spectacle_4862916839_o~orig.jpg", writable: true, enumerable: true }
                 }),
             Object.create(prototypePicture,
                 {
@@ -203,7 +203,7 @@ class picturesTemplate {
                         , writable: true, enumerable: true
                     },
                     imgLoRes: { value: "GSFC_20171208_Archive_e001955~small.jpg", writable: true, enumerable: true },
-                    imgHiRes: { value: "GSFC_20171208_Archive_e001955~orig.jpg", writable: true, enumerable: true }
+                    // imgHiRes: { value: "GSFC_20171208_Archive_e001955~orig.jpg", writable: true, enumerable: true }
                 }),
             Object.create(prototypePicture,
                 {
@@ -215,7 +215,7 @@ class picturesTemplate {
                         , writable: true, enumerable: true
                     },
                     imgLoRes: { value: "PIA03244~small.jpg", writable: true, enumerable: true },
-                    imgHiRes: { value: "PIA03244~orig.jpg", writable: true, enumerable: true }
+                    // imgHiRes: { value: "PIA03244~orig.jpg", writable: true, enumerable: true }
                 }),
             Object.create(prototypePicture,
                 {
@@ -227,7 +227,7 @@ class picturesTemplate {
                         , writable: true, enumerable: true
                     },
                     imgLoRes: { value: "PIA16008~small.jpg", writable: true, enumerable: true },
-                    imgHiRes: { value: "PIA16008~orig.jpg", writable: true, enumerable: true }
+                    // imgHiRes: { value: "PIA16008~orig.jpg", writable: true, enumerable: true }
                 }),
             Object.create(prototypePicture,
                 {
@@ -239,7 +239,7 @@ class picturesTemplate {
                         , writable: true, enumerable: true
                     },
                     imgLoRes: { value: "PIA16022~small.jpg", writable: true, enumerable: true },
-                    imgHiRes: { value: "PIA16022~orig.jpg", writable: true, enumerable: true }
+                    // imgHiRes: { value: "PIA16022~orig.jpg", writable: true, enumerable: true }
                 })
         ];
     }
@@ -255,7 +255,7 @@ class picturesTemplate {
                         , writable: true, enumerable: true
                     },
                     imgLoRes: { value: "0301627~small.jpg", writable: true, enumerable: true },
-                    imgHiRes: { value: "0301627~orig.jpg", writable: true, enumerable: true }
+                    // imgHiRes: { value: "0301627~orig.jpg", writable: true, enumerable: true }
                 }),
             Object.create(prototypePicture,
                 {
@@ -267,7 +267,7 @@ class picturesTemplate {
                         , writable: true, enumerable: true
                     },
                     imgLoRes: { value: "GSFC_20171208_Archive_e000226~small.jpg", writable: true, enumerable: true },
-                    imgHiRes: { value: "GSFC_20171208_Archive_e000226~orig.jpg", writable: true, enumerable: true }
+                    // imgHiRes: { value: "GSFC_20171208_Archive_e000226~orig.jpg", writable: true, enumerable: true }
                 }),
             Object.create(prototypePicture,
                 {
@@ -279,7 +279,7 @@ class picturesTemplate {
                         , writable: true, enumerable: true
                     },
                     imgLoRes: { value: "GSFC_20171208_Archive_e000383~small.jpg", writable: true, enumerable: true },
-                    imgHiRes: { value: "GSFC_20171208_Archive_e000383~orig.jpg", writable: true, enumerable: true }
+                    // imgHiRes: { value: "GSFC_20171208_Archive_e000383~orig.jpg", writable: true, enumerable: true }
                 }),
             Object.create(prototypePicture,
                 {
@@ -291,7 +291,7 @@ class picturesTemplate {
                         , writable: true, enumerable: true
                     },
                     imgLoRes: { value: "GSFC_20171208_Archive_e000657~small.jpg", writable: true, enumerable: true },
-                    imgHiRes: { value: "GSFC_20171208_Archive_e000657~orig.jpg", writable: true, enumerable: true }
+                    // imgHiRes: { value: "GSFC_20171208_Archive_e000657~orig.jpg", writable: true, enumerable: true }
                 }),
             Object.create(prototypePicture,
                 {
@@ -304,7 +304,7 @@ class picturesTemplate {
                         , writable: true, enumerable: true
                     },
                     imgLoRes: { value: "GSFC_20171208_Archive_e001963~small.jpg", writable: true, enumerable: true },
-                    imgHiRes: { value: "GSFC_20171208_Archive_e001963~orig.jpg", writable: true, enumerable: true }
+                    // imgHiRes: { value: "GSFC_20171208_Archive_e001963~orig.jpg", writable: true, enumerable: true }
                 }),
             Object.create(prototypePicture,
                 {
@@ -316,7 +316,7 @@ class picturesTemplate {
                         , writable: true, enumerable: true
                     },
                     imgLoRes: { value: "PIA15985~small.jpg", writable: true, enumerable: true },
-                    imgHiRes: { value: "PIA15985~orig.jpg", writable: true, enumerable: true }
+                    // imgHiRes: { value: "PIA15985~orig.jpg", writable: true, enumerable: true }
                 })
         ];
     }
@@ -333,7 +333,7 @@ class picturesTemplate {
                         , writable: true, enumerable: true
                     },
                     imgLoRes: { value: "0700064~small.jpg", writable: true, enumerable: true },
-                    imgHiRes: { value: "0700064~orig.jpg", writable: true, enumerable: true }
+                    // imgHiRes: { value: "0700064~orig.jpg", writable: true, enumerable: true }
                 }),
             Object.create(prototypePicture,
                 {
@@ -346,7 +346,7 @@ class picturesTemplate {
                         , writable: true, enumerable: true
                     },
                     imgLoRes: { value: "GSFC_20171208_Archive_e000117~small.jpg", writable: true, enumerable: true },
-                    imgHiRes: { value: "GSFC_20171208_Archive_e000117~orig.jpg", writable: true, enumerable: true }
+                    // imgHiRes: { value: "GSFC_20171208_Archive_e000117~orig.jpg", writable: true, enumerable: true }
                 }),
             Object.create(prototypePicture,
                 {
@@ -359,10 +359,12 @@ class picturesTemplate {
                         , writable: true, enumerable: true
                     },
                     imgLoRes: { value: "GSFC_20171208_Archive_e001885~small.jpg", writable: true, enumerable: true },
-                    imgHiRes: { value: "GSFC_20171208_Archive_e001885~orig.jpg", writable: true, enumerable: true }
+                    // imgHiRes: { value: "GSFC_20171208_Archive_e001885~orig.jpg", writable: true, enumerable: true }
                 }),
-            Object.create(prototypePicture,
+            Object.create( prototypePicture, /* THIS IS THE FIRST GALAXY FUCKER! :) */
                 {
+                    // this:addEventListener("click", colorSwap),
+
                     id: { value: uniqueId(), writable: true, enumerable: true },
                     title: { value: `Andromeda Galaxy`, writable: true, enumerable: true },
                     comment: {
@@ -371,7 +373,7 @@ class picturesTemplate {
                         , writable: true, enumerable: true
                     },
                     imgLoRes: { value: "PIA04921~small.jpg", writable: true, enumerable: true },
-                    imgHiRes: { value: "PIA04921~orig.jpg", writable: true, enumerable: true }
+                    // imgHiRes: { value: "PIA04921~orig.jpg", writable: true, enumerable: true },
                 }),
             Object.create(prototypePicture,
                 {
@@ -384,7 +386,7 @@ class picturesTemplate {
                         , writable: true, enumerable: true
                     },
                     imgLoRes: { value: "PIA08097~small.jpg", writable: true, enumerable: true },
-                    imgHiRes: { value: "PIA08097~orig.jpg", writable: true, enumerable: true }
+                    // imgHiRes: { value: "PIA08097~orig.jpg", writable: true, enumerable: true }
                 }),
             Object.create(prototypePicture,
                 {
@@ -396,7 +398,7 @@ class picturesTemplate {
                         , writable: true, enumerable: true
                     },
                     imgLoRes: { value: "PIA15226~small.jpg", writable: true, enumerable: true },
-                    imgHiRes: { value: "PIA15226~orig.jpg", writable: true, enumerable: true }
+                    // imgHiRes: { value: "PIA15226~orig.jpg", writable: true, enumerable: true }
                 })
         ];
     }
