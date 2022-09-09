@@ -33,6 +33,14 @@
             "name": "React Chrome",
             "url": "http://localhost:3000",
             "webRoot": "${workspaceFolder}"
-          }
+        }
+        
+
+        // to see console.log() in debug window:
+        ,
+        {
+            "outputCapture": "std"
+        }
+        // test
     ]
 }

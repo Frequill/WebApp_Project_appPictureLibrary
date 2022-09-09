@@ -4,6 +4,8 @@
 //import * as proto from './picture-album-prototypes.js';
 import * as lib from '../model/picture-library-browser.js';
 
+// ********************************************* index.html *********************************************
+
 const libraryJSON = "picture-library.json";
 let library;  //Global varibale, Loaded async from the current server in window.load event
 
@@ -46,49 +48,55 @@ function renderImage(src, tag) {
   imgFlex.appendChild(div);
 };
 
+// Global scope
+let clickedImageID; // Functions belonging to this variable still beeing tested
+
+
+function imageClick() {
+  clickedImageID = this.getAttribute('id'); // Saves the id of the picture that was clicked by user -- WE KNOW THIS WORKS :)
+  location.href = 'imageSelected.html'; // Jump to the 'imageSelected' page
+  document.getElementById("back-button").innerHTML("Testar om jag är dum i huvudet");
+}
+
 window.onload = function () {
-  function colorSwap() {
-    const test = document.getElementById("test-id");
-    test.style.backgroundColor = "red";
-    test.innerHTML = "Tate";
-  }
-
-
-  /*
-  let pictureCounter = 0;            //   HERE IS WHERE WE LEFT OFF YESTERDAY - This does not yet work
-  const fs = require('fs');
-  const dir = './pictures';
-  fs.readdir(dir, (err, files) => {
-    console.log(files.length);
-    pictureCounter = files.length;
-  });
-
-  let counterPic = 1;
-    for (let i = 1; i <= pictureCounter; i++) {
-      document.getElementById("pictureTest" + counterPic).addEventListener('click', colorSwap);
-      counterPic++;
-    }
-    */
-
-
-  
-  // ACTION-LISTINER-LOOP     THIS WORKS... BUT DOES NOT ADD ACTION-LISTINERS TO LAST 5 PICTURES??
+  // ACTION-LISTENER-LOOP     THIS WORKS! Adds actionListiners to all images 
   let counterPic = 1;
   for (const album of library.albums) {
-    for (const picture of album.pictures) {
-      document.getElementById("pictureTest" + counterPic).addEventListener('click', colorSwap);
+    let amountOfPics = album.pictures.length;
+    for (let i = 0; i < amountOfPics + 1; i++) { // vf funkar +1 ????
+      document.getElementById("pictureTest" + counterPic).addEventListener('click', imageClick);
       counterPic++;
     }
   }
 }
+// ********************************************* index.html *********************************************
 
-
-/* document.getElementById("toros01").addEventListener("click", displayDate); /* FULLT fungerande action listener! */
+// ***************************************** imageSelected.html *****************************************
 /*
-function displayDate() {
-  document.getElementById("toros01").innerHTML = Date();
-}
-*/
+window.addEventListener('load', (event) => {
+  console.log('page is fully loaded');
+  let imageTitle = document.getElementById("bild-titel");
+  imageTitle.innerHTML = "test";});
+  */
+//function() => {
+
+//  window.onload = (event) => {
+    
+  //};
+//}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 console.log(libraryJSON.stringify);
 
