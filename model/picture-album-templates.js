@@ -8,7 +8,7 @@
 //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import
 //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export
 
-import {prototypeAlbum, prototypePicture, uniqueId} from './picture-album-prototypes.js';
+import {prototypeAlbum, prototypePicture, uniqueIdImages, uniqueIdAlbums} from './picture-album-prototypes.js';
 
 const pictureDir = "app-data/library/pictures";
 
@@ -23,7 +23,7 @@ class albumsTemplate {
             //properties needs to be writable and enumaberable to be able to use JSON.stringify(..)
             Object.create(prototypeAlbum,
                 {
-                    id: { value: uniqueId(), writeable: true, enumerable: true },
+                    id: { value: uniqueIdAlbums(), writeable: true, enumerable: true },
                     title: { value: "Galaxies", writeable: true, enumerable: true },
                     comment: { value: "There are inifinte of them in the universe", writeable: true, enumerable: true },
                     path: { value: `${pictureDir}/galaxies`, writeable: true, enumerable: true },
@@ -33,7 +33,7 @@ class albumsTemplate {
 
             Object.create(prototypeAlbum,
                 {
-                    id: { value: uniqueId(), writeable: true, enumerable: true },
+                    id: { value: uniqueIdAlbums(), writeable: true, enumerable: true },
                     title: { value: "Nebulas", writeable: true, enumerable: true },
                     comment: { value: "Image that a cloud of gas could be this beautiful", writeable: true, enumerable: true },
                     path: { value: `${pictureDir}/nebulas`, writeable: true, enumerable: true },
@@ -43,7 +43,7 @@ class albumsTemplate {
 
             Object.create(prototypeAlbum,
                 {
-                    id: { value: uniqueId(), writeable: true, enumerable: true },
+                    id: { value: uniqueIdAlbums(), writeable: true, enumerable: true },
                     title: { value: "Newborn stars", writeable: true, enumerable: true },
                     comment: { value: "A star is born", writeable: true, enumerable: true },
                     path: { value: `${pictureDir}/newborn-stars`, writeable: true, enumerable: true },
@@ -52,7 +52,7 @@ class albumsTemplate {
                 }),
             Object.create(prototypeAlbum,
                 {
-                    id: { value: uniqueId(), writeable: true, enumerable: true },
+                    id: { value: uniqueIdAlbums(), writeable: true, enumerable: true },
                     title: { value: "Planets", writeable: true, enumerable: true },
                     comment: { value: "Checkout some amazing pictures of our neighbours", writeable: true, enumerable: true },
                     path: { value: `${pictureDir}/planets`, writeable: true, enumerable: true },
@@ -61,7 +61,7 @@ class albumsTemplate {
                 }),
             Object.create(prototypeAlbum,
                 {
-                    id: { value: uniqueId(), writeable: true, enumerable: true },
+                    id: { value: uniqueIdAlbums(), writeable: true, enumerable: true },
                     title: { value: "Hubble telescope", writeable: true, enumerable: true },
                     comment: { value: "All the pictures were taken by this amazing telescope", writeable: true, enumerable: true },
                     path: { value: `${pictureDir}/hubble-telescope`, writeable: true, enumerable: true },
@@ -79,7 +79,7 @@ class picturesTemplate {
         return [
             Object.create(prototypePicture,
                 {
-                    id: { value: uniqueId(), writable: true, enumerable: true },
+                    id: { value: uniqueIdImages(), writable: true, enumerable: true },
                     title: { value: "History of Hubble Space Telescope (HST)", writable: true, enumerable: true },
                     comment: {
                         value: "Ready for transportation to the Kennedy Space Center, the Hubble Space Telescope (HST) " +
@@ -92,7 +92,7 @@ class picturesTemplate {
                 }),
             Object.create(prototypePicture,
                 {
-                    id: { value: uniqueId() },
+                    id: { value: uniqueIdImages() },
                     title: { value: "History of Hubble Space Telescope (HST)", writable: true, enumerable: true },
                     comment: {
                         value: "The Hubble Space Telescope (HST) pictured in the Vertical Processing Facility (VPF) support fixture " +
@@ -104,7 +104,7 @@ class picturesTemplate {
                 }),
             Object.create(prototypePicture,
                 {
-                    id: { value: uniqueId(), writable: true, enumerable: true },
+                    id: { value: uniqueIdImages(), writable: true, enumerable: true },
                     title: { value: "Hubble Space Telescope", writable: true, enumerable: true },
                     comment: {
                         value: "The Hubble Space Telescope in a picture snapped by a Servicing Mission 4 crewmember just after the Space Shuttle Atlantis " +
@@ -116,7 +116,7 @@ class picturesTemplate {
                 }),
             Object.create(prototypePicture,
                 {
-                    id: { value: uniqueId(), writable: true, enumerable: true },
+                    id: { value: uniqueIdImages(), writable: true, enumerable: true },
                     title: { value: "Making Room for Hubble's New Camera", writable: true, enumerable: true },
                     comment: {
                         value: "Astronaut Jeffrey Hoffman removes the Wide Field and Planetary Camera 1 (WFPC 1) during the first Hubble servicing mission (SM1), " +
@@ -132,7 +132,7 @@ class picturesTemplate {
         return [
             Object.create(prototypePicture,
                 {
-                    id: { value: uniqueId(), writable: true, enumerable: true },
+                    id: { value: uniqueIdImages(), writable: true, enumerable: true },
                     title: { value: "Hubble Takes Mars Portrait Near Close Approach", writable: true, enumerable: true },
                     comment: {
                         value: "Mars is looking mighty fine in this portrait nabbed by the Hubble Space Telescope on a near close approach. " +
@@ -145,7 +145,7 @@ class picturesTemplate {
                 }),
             Object.create(prototypePicture,
                 {
-                    id: { value: uniqueId(), writable: true, enumerable: true },
+                    id: { value: uniqueIdImages(), writable: true, enumerable: true },
                     title: { value: "Hubble Captures Vivid Auroras in Jupiter’s Atmosphere", writable: true, enumerable: true },
                     comment: {
                         value: "Astronomers are using the NASA/ESA Hubble Space Telescope to study auroras " +
@@ -157,7 +157,7 @@ class picturesTemplate {
                 }),
             Object.create(prototypePicture,
                 {
-                    id: { value: uniqueId(), writable: true, enumerable: true },
+                    id: { value: uniqueIdImages(), writable: true, enumerable: true },
                     title: { value: "Hubble Takes Mars Portrait Near Close Approach", writable: true, enumerable: true },
                     comment: {
                         value: "Mars is looking mighty fine in this portrait nabbed by the Hubble Space Telescope on a near close approach. " +
@@ -170,7 +170,7 @@ class picturesTemplate {
                 }),
             Object.create(prototypePicture,
                 {
-                    id: { value: uniqueId(), writable: true, enumerable: true },
+                    id: { value: uniqueIdImages(), writable: true, enumerable: true },
                     title: { value: "Hubble Observes a New Saturn Storm", writable: true, enumerable: true },
                     comment: {
                         value: "Hubble Observes a New Saturn Storm", writable: true, enumerable: true
@@ -184,7 +184,7 @@ class picturesTemplate {
         return [
             Object.create(prototypePicture,
                 {
-                    id: { value: uniqueId(), writable: true, enumerable: true },
+                    id: { value: uniqueIdImages(), writable: true, enumerable: true },
                     title: { value: "A Galactic Spectacle", writable: true, enumerable: true },
                     comment: {
                         value: "NASA image release August 5, 2010 A beautiful new image of two colliding galaxies has been released by NASA's Great Observatories."
@@ -195,7 +195,7 @@ class picturesTemplate {
                 }),
             Object.create(prototypePicture,
                 {
-                    id: { value: uniqueId(), writable: true, enumerable: true },
+                    id: { value: uniqueIdImages(), writable: true, enumerable: true },
                     title: { value: "Hubble reveals heart of Lagoon Nebula", writable: true, enumerable: true },
                     comment: {
                         value: "A spectacular new NASA/ESA Hubble Space Telescope image reveals the heart of the Lagoon Nebula. Seen as a massive cloud of " +
@@ -207,7 +207,7 @@ class picturesTemplate {
                 }),
             Object.create(prototypePicture,
                 {
-                    id: { value: uniqueId(), writable: true, enumerable: true },
+                    id: { value: uniqueIdImages(), writable: true, enumerable: true },
                     title: { value: "Stellar Snowflake Cluster", writable: true, enumerable: true },
                     comment: {
                         value: "Newborn stars, hidden behind thick dust, are revealed in this image of a section of the Christmas Tree cluster from " +
@@ -219,7 +219,7 @@ class picturesTemplate {
                 }),
             Object.create(prototypePicture,
                 {
-                    id: { value: uniqueId(), writable: true, enumerable: true },
+                    id: { value: uniqueIdImages(), writable: true, enumerable: true },
                     title: { value: "Hubble Sees a Horsehead of a Different Color", writable: true, enumerable: true },
                     comment: {
                         value: "Backlit wisps along the Horsehead Nebula upper ridge are being illuminated by Sigma Orionis, " +
@@ -231,7 +231,7 @@ class picturesTemplate {
                 }),
             Object.create(prototypePicture,
                 {
-                    id: { value: uniqueId(), writable: true, enumerable: true },
+                    id: { value: uniqueIdImages(), writable: true, enumerable: true },
                     title: { value: "Hubble Sees the Force Awakening in a Newborn Star", writable: true, enumerable: true },
                     comment: {
                         value: "In the center of this image from the Hubble Space Telescope, partially obscured by a dark cloud of dust, " +
@@ -247,7 +247,7 @@ class picturesTemplate {
         return [
             Object.create(prototypePicture,
                 {
-                    id: { value: uniqueId(), writable: true, enumerable: true },
+                    id: { value: uniqueIdImages(), writable: true, enumerable: true },
                     title: { value: "History of Hubble Space Telescope (HST)", writable: true, enumerable: true },
                     comment: {
                         value: "This is a color Hubble Space Telescope (HST) heritage image of supernova remnant N49, a neighboring galaxy, " +
@@ -259,7 +259,7 @@ class picturesTemplate {
                 }),
             Object.create(prototypePicture,
                 {
-                    id: { value: uniqueId(), writable: true, enumerable: true },
+                    id: { value: uniqueIdImages(), writable: true, enumerable: true },
                     title: { value: "Hubble Peers into the Storm", writable: true, enumerable: true },
                     comment: {
                         value: "Backlit wisps along the Horsehead Nebula upper ridge are being illuminated by Sigma Orionis, " +
@@ -271,7 +271,7 @@ class picturesTemplate {
                 }),
             Object.create(prototypePicture,
                 {
-                    id: { value: uniqueId(), writable: true, enumerable: true },
+                    id: { value: uniqueIdImages(), writable: true, enumerable: true },
                     title: { value: `Hubble Sees a Star ‘Inflating’ a Giant Bubble`, writable: true, enumerable: true },
                     comment: {
                         value: "For the 26th birthday of NASA’s Hubble Space Telescope, astronomers are highlighting a " +
@@ -283,7 +283,7 @@ class picturesTemplate {
                 }),
             Object.create(prototypePicture,
                 {
-                    id: { value: uniqueId(), writable: true, enumerable: true },
+                    id: { value: uniqueIdImages(), writable: true, enumerable: true },
                     title: { value: `Hubble Finds a Little Gem`, writable: true, enumerable: true },
                     comment: {
                         value: "This colorful bubble is a planetary nebula called NGC 6818, also known as the Little Gem Nebula. " +
@@ -295,7 +295,7 @@ class picturesTemplate {
                 }),
             Object.create(prototypePicture,
                 {
-                    id: { value: uniqueId(), writable: true, enumerable: true },
+                    id: { value: uniqueIdImages(), writable: true, enumerable: true },
                     title: { value: `Hubble Captures Cosmic Ice Sculptures`, writable: true, enumerable: true },
                     comment: {
                         value: "NASA image release September 16, 2010 Enjoying a frozen treat on a hot summer day can leave a sticky " +
@@ -308,7 +308,7 @@ class picturesTemplate {
                 }),
             Object.create(prototypePicture,
                 {
-                    id: { value: uniqueId(), writable: true, enumerable: true },
+                    id: { value: uniqueIdImages(), writable: true, enumerable: true },
                     title: { value: "Hubble Captures View of Mystic Mountain", writable: true, enumerable: true },
                     comment: {
                         value: "NASA Hubble Space Telescope captures the chaotic activity atop a three-light-year-tall pillar of gas and dust that " +
@@ -324,7 +324,7 @@ class picturesTemplate {
         return [
             Object.create(prototypePicture,
                 {
-                    id: { value: uniqueId(), writable: true, enumerable: true },
+                    id: { value: uniqueIdImages(), writable: true, enumerable: true },
                     title: { value: "History of Hubble Space Telescope (HST)", writable: true, enumerable: true },
                     comment: {
                         value: "The razor sharp eye of the Hubble Space Telescope (HST) easily resolves the Sombrero galaxy, Messier 104 (M104). " +
@@ -337,7 +337,7 @@ class picturesTemplate {
                 }),
             Object.create(prototypePicture,
                 {
-                    id: { value: uniqueId(), writable: true, enumerable: true },
+                    id: { value: uniqueIdImages(), writable: true, enumerable: true },
                     title: { value: "Hubble's Glittering Frisbee Galaxy", writable: true, enumerable: true },
                     comment: {
                         value: "This image from Hubble’s Wide Field Camera 3 (WFC3) shows a section of NGC 1448, " +
@@ -350,7 +350,7 @@ class picturesTemplate {
                 }),
             Object.create(prototypePicture,
                 {
-                    id: { value: uniqueId(), writable: true, enumerable: true },
+                    id: { value: uniqueIdImages(), writable: true, enumerable: true },
                     title: { value: `NASA's Hubble Celebrates 21st Anniversary with "Rose" of Galaxies`, writable: true, enumerable: true },
                     comment: {
                         value: "To celebrate the 21st anniversary of the Hubble Space Telescope's deployment into space, astronomers " +
@@ -365,7 +365,7 @@ class picturesTemplate {
                 {
                     // this:addEventListener("click", colorSwap),
 
-                    id: { value: uniqueId(), writable: true, enumerable: true },
+                    id: { value: uniqueIdImages(), writable: true, enumerable: true },
                     title: { value: `Andromeda Galaxy`, writable: true, enumerable: true },
                     comment: {
                         value: "This image is from NASA Galaxy Evolution Explorer is an observation of the large galaxy in Andromeda, Messier 31. " +
@@ -377,7 +377,7 @@ class picturesTemplate {
                 }),
             Object.create(prototypePicture,
                 {
-                    id: { value: uniqueId(), writable: true, enumerable: true },
+                    id: { value: uniqueIdImages(), writable: true, enumerable: true },
                     title: { value: `Eyes in the Sky`, writable: true, enumerable: true },
                     comment: {
                         value: "NASA Hubble and Spitzer telescopes combined to make these shape-shifting galaxies taking on the form of a giant mask. " +
@@ -390,7 +390,7 @@ class picturesTemplate {
                 }),
             Object.create(prototypePicture,
                 {
-                    id: { value: uniqueId(), writable: true, enumerable: true },
+                    id: { value: uniqueIdImages(), writable: true, enumerable: true },
                     title: { value: `Hubble Spies Spectacular Sombrero`, writable: true, enumerable: true },
                     comment: {
                         value: "Lying at the southern edge of the rich Virgo cluster of galaxies, Messier 104, also called the Sombrero galaxy, " +

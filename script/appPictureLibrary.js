@@ -7,6 +7,7 @@ import * as lib from '../model/picture-library-browser.js';
 // ********************************************* index.html *********************************************
 
 const libraryJSON = "picture-library.json";
+
 let library;  //Global varibale, Loaded async from the current server in window.load event
 
 //use the DOMContentLoaded, or window load event to read the library async and render the images
@@ -48,14 +49,15 @@ function renderImage(src, tag) {
   imgFlex.appendChild(div);
 };
 
-// Global scope
-let clickedImageID; // Functions belonging to this variable still beeing tested
 
 
-function imageClick() {
-  clickedImageID = this.getAttribute('id'); // Saves the id of the picture that was clicked by user -- WE KNOW THIS WORKS :)
+
+
+function imageClick() { 
+  localStorage.setItem("pictureId", this.getAttribute('id'));
+  console.log("imageClick funktionen kör! (Här är den i localStorage): " + JSON.stringify(localStorage.getItem("pictureId")));
   location.href = 'imageSelected.html'; // Jump to the 'imageSelected' page
-  document.getElementById("back-button").innerHTML("Testar om jag är dum i huvudet");
+  // ************* HÄR VERKAR DET SOM ATT 'clickedImageID' töms och blir "undefined" igen *************
 }
 
 window.onload = function () {
@@ -64,45 +66,56 @@ window.onload = function () {
   for (const album of library.albums) {
     let amountOfPics = album.pictures.length;
     for (let i = 0; i < amountOfPics + 1; i++) { // vf funkar +1 ????
-      document.getElementById("pictureTest" + counterPic).addEventListener('click', imageClick);
+      document.getElementById("picture" + counterPic).addEventListener('click', imageClick);
       counterPic++;
     }
   }
 }
+
 // ********************************************* index.html *********************************************
 
+
+
 // ***************************************** imageSelected.html *****************************************
-/*
+
+console.log("******************************* Här är koden på rad 83 *******************************");
+
 window.addEventListener('load', (event) => {
   console.log('page is fully loaded');
   let imageTitle = document.getElementById("bild-titel");
-  imageTitle.innerHTML = "test";});
-  */
+
+  // console.log("Här är resultatet av att printa ett JSON element från den feta JSON filen: " + libraryJSON.id("l66egbjmvn3b62yhxlm"));
+
+  // console.log("GÅR KANSKE DET HÄR ATT LÄSA ISTÄLLET?: " + JSON.stringify(localStorage.getItem("pictureId")));
+
+  fetch("/app-data/library/picture-library.json")
+  .then(function(resp){
+    return resp.json();
+  })
+  .then(function(data){
+    console.log(data); // "data" är alltså våran feta JSON array! (picture-library.json)
+    console.log("Här är pictures???:" + JSON.stringify(data.albums[0].pictures))  // På såhär vis kan man printa samtliga bilder från JSON arrayen (index 0)! (Bygg vidare på detta)
+                                                                                  // Med for-loop eller liknande för att printa/hämta alla bilder i hela arrayen
+  });
+
+  //console.log(this.data.albums.pictures.imageTitle);
+
+  
+  
+
+
+  imageTitle.innerText = (localStorage.getItem("pictureId"))});
+  
+
+
+
 //function() => {
 
 //  window.onload = (event) => {
-    
-  //};
+
+//};
 //}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-console.log(libraryJSON.stringify);
-
-console.log(libraryJSON(0));
-console.log(libraryJSON[0]);
-console.log(libraryJSON);
 
 //obj.valueOf(Object.keys(obj).indexOf('String_to_Find'))
 

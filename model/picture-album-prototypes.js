@@ -19,11 +19,18 @@ const prototypePicture = {
     toString: function () { return `${this.id}: ${this.title}\n  imgLoRes: ${this.imgLoRes}\n  imgHiRes: ${this.imgHiRes}\n${this.comment}` }
 }
 
-let pictureTest = "pictureTest"
+let pictureId = "picture"
 let counter = 0;
-function uniqueId(){
+function uniqueIdImages(){
     counter++;
-    return pictureTest + counter;
+    return pictureId + counter;
+}
+
+let albumId = "album"
+let counter2 = 0;
+function uniqueIdAlbums(){
+    counter2++;
+    return albumId + counter2;
 }
 
 /*
@@ -38,4 +45,4 @@ function uniqueId() {
     return uniqueId;
 };
 */
-export {prototypeAlbum, prototypePicture, uniqueId}
+export {prototypeAlbum, prototypePicture, uniqueIdImages, uniqueIdAlbums}
