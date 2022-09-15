@@ -52,7 +52,7 @@ body {
 
   margin-right: 50px;
   margin-bottom: 20px;
-  min-height: 400px;
+  min-height: 50%;/*400px;*/
 
   display: inline-block; /* I ADDED THIS NOW FOR TEST HIHI REMOVE ME IF PROBLEM PERSISTS! //Julius Thomsen */
 
@@ -251,7 +251,7 @@ Credit goes to https://codepen.io/knyttneve/pen/EBNqPN
 
 
   .FlexSideTwo {
-    width: 150px;
+    width: 25vh;/*150px;*/
     border-style: groove;
     border-width: 6px;
     border-color: white;
@@ -263,6 +263,7 @@ Credit goes to https://codepen.io/knyttneve/pen/EBNqPN
     display: inline-block; /* I ADDED THIS NOW FOR TEST HIHI REMOVE ME IF PROBLEM PERSISTS! //Julius Thomsen */
     margin-right: 50px;
     margin-bottom: 20px; 
+    max-height: 80%;
 
     background: #8A2387;
     /* fallback for old browsers */
@@ -349,6 +350,12 @@ Credit goes to https://codepen.io/knyttneve/pen/EBNqPN
     border: 2px solid #ccc;
     font: 16px/26px Georgia, Garamond, Serif;
     overflow: auto;
+  }
+  .FlexSideTwo{
+    max-height: 15%;
+    flex: 1 0;
+
+
   }
 }
 
