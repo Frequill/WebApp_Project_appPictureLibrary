@@ -49,9 +49,7 @@ function renderImage(src, tag) {
   imgFlex.appendChild(div);
 };
 
-
-
-
+// ********************************************* CLICK FUNCTIONALITY TO IMAGES ? *********************************************
 
 function imageClick() {
   localStorage.setItem("pictureId", this.getAttribute('id'));
@@ -74,16 +72,15 @@ window.onload = function () {
 
 // ********************************************* index.html *********************************************
 
-
-
 // ***************************************** imageSelected.html *****************************************
 
-console.log("******************************* Här är koden på rad 83 *******************************");
+console.log("**************************************************************");
 
 window.addEventListener('load', (event) => {
   console.log('page is fully loaded');
   let imageTitle = document.getElementById("bild-titel");
-  let image = document.getElementById("highlighted-image");
+  let image = document.getElementById("highlighted-image"); // picture
+  let imageDescription = document.getElementById("comments-display-field"); // description
 
   fetch("/app-data/library/picture-library.json")
     .then(function (resp) {
@@ -104,62 +101,14 @@ window.addEventListener('load', (event) => {
             // console.log("Julius bullshit: " + data.albums[i].pictures[j].title)
             imageTitle.innerText = data.albums[i].pictures[j].title;  
 
-            // BELOW IS WRONG SYNTAX
-            image.style.backgroundImage="url(/" + data.albums[i].path + '/' + data.albums[i].pictures[j].imgLoRes`)`;
-
-            // object.style.backgroundImage="url(img_tree.gif)"
-
-            // image.setAttribute('url', '/' + data.albums[i].path + '/' + data.albums[i].pictures[j].imgLoRes);
-            // image.url = '/' + data.albums[i].path + '/' + data.albums[i].pictures[j].imgLoRes;
+            image.style.backgroundImage="url(/" + data.albums[i].path + '/' + data.albums[i].pictures[j].imgLoRes + `)`; // vi hade glömt ett + efter imgLoRes
+            
+            imageDescription.innerText = data.albums[i].pictures[j].comment; // för att få fram beskrivning
             console.log(`data.albums[i].path + data.albums[i].pictures[j].imgLoRes: ` + '/' + data.albums[i].path + '/' + data.albums[i].pictures[j].imgLoRes);
             console.log(`image.url: ` + image.url);
-            console.log('url', '/' + data.albums[i].path + '/' + data.albums[i].pictures[j].imgLoRes);
-            
-
-            // document.body.style.cssText = 'color:#abcdef;';
-            
-            //src = "data.albums[4].path/PIA22574~small.jpg"
-
-            //              /app-data/library/pictures/galaxies/PIA04921~orig.jpg
-            //              ^                                                        
+            console.log('url', '/' + data.albums[i].path + '/' + data.albums[i].pictures[j].imgLoRes);                                                   
           } 
         }
       }
     });
-
-  // imageTitle.innerText = (localStorage.getItem("pictureId"))
 });
-
-// -----------------------------JSON PARSE - TEST-----------------------------------
-/*
-console.log(JSON.parse(libraryJSON));
-
-let imageGalleryObject = JSON.parse(libraryJSON);
-
-console.log(imageGalleryObject.albums.pictures);
-
-for (let album of imageGalleyObject) {
-  for (let picture of imageGalleyObject.albums) {
-    if (imageTitle == imageGalleryObject.albums.pictures.id) {
-      imageTitle.innerText = imageGalleryObject.albums.pictures.title;
-    }
-  }
-}
-*/
-// -----------------------------JSON PARSE - TEST-----------------------------------
-
-
-
-//function() => {
-
-//  window.onload = (event) => {
-
-//};
-//}
-
-
-//obj.valueOf(Object.keys(obj).indexOf('String_to_Find'))
-
-// console.log(stringify.libraryJSON(0));
-
-/* Test comment for first commit! */
