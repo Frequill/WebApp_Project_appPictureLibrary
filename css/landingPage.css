@@ -22,7 +22,8 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    /* TEST */ flex-direction: column;
+    /* TEST */ flex-direction: row; /*column*/
+    flex-wrap: wrap; /*r*/
 }
 
 .navBar {
@@ -36,6 +37,7 @@
     padding: 20px;
     margin: 20px;
     justify-content: space-evenly;
+    
 }
 
 .navBar:hover {
@@ -62,4 +64,25 @@
     justify-content: center;
     margin: 0px;
     text-shadow: 0 0 10px #ffffff;
+    position: absolute;  
+    left: 50%;                      
+    top: 30%;    
+    transform: translate(-50%, -50%)
+      
 }
+@media (max-width: 690px){
+    .nav-flex-container{
+        flex-direction: column;
+    }
+    .greetingLabel {
+        vertical-align:top;
+        top: 5%;
+        justify-content: space-evenly;
+
+       
+
+    }
+
+
+}
+
