@@ -5,6 +5,7 @@ import * as lib from '../model/picture-library-browser.js';                 // N
 window.onload = function () {
 
     let picsFromGalaxiesAlbum = document.getElementById("pics-from-galaxies-album-div");
+    let headerImageGalaxiesAlbum = document.getElementById("galaxies-header-image");
 
     console.log("picsFromGalaxiesAlbum: " + picsFromGalaxiesAlbum);
 
@@ -19,6 +20,9 @@ window.onload = function () {
             for (let i = 0; i < data.albums[0].pictures.length; i++) {
                 picsFromGalaxiesAlbum.innerHTML += (`<img src="` + data.albums[0].path + `/` + data.albums[0].pictures[i].imgLoRes + `">`);
             }
+
+            console.log(`<img src="../app-data/library/pictures/album-header/PIA04921~small.jpg">`);
+            headerImageGalaxiesAlbum.innerHTML += (`<img src="../app-data/library/pictures/album-header/PIA04921~small.jpg">`);
         });
 
     // -----------------------------TEST FÖR IMAGE CLICK FUNCTIONALITY----------------------------------------
