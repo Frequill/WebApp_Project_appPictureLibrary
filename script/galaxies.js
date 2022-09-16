@@ -18,7 +18,9 @@ window.onload = function () {
             console.log(data.albums[0].pictures.length);
             console.log("data: " + data);
             for (let i = 0; i < data.albums[0].pictures.length; i++) {
-                picsFromGalaxiesAlbum.innerHTML += (`<img src="` + data.albums[0].path + `/` + data.albums[0].pictures[i].imgLoRes + `">`);
+
+                // FUNKAR DEN HÄR NEDAN ??
+                picsFromGalaxiesAlbum.innerHTML += (`<img src="` + data.albums[0].path + `/` + data.albums[0].pictures[i].imgLoRes + `" id='` + "picID" + i + `'>`); 
             }
 
             console.log(`<img src="../app-data/library/pictures/album-header/PIA04921~small.jpg">`);

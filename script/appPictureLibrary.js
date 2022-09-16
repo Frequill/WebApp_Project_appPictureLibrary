@@ -102,9 +102,9 @@ window.addEventListener('load', (event) => {
             image.style.backgroundImage = "url(/" + data.albums[i].path + '/' + data.albums[i].pictures[j].imgLoRes + `)`; // vi hade glömt ett + efter imgLoRes
 
             imageDescription.innerText = data.albums[i].pictures[j].comment; // för att få fram beskrivning
-            console.log(`data.albums[i].path + data.albums[i].pictures[j].imgLoRes: ` + '/' + data.albums[i].path + '/' + data.albums[i].pictures[j].imgLoRes);
-            console.log(`image.url: ` + image.url);
-            console.log('url', '/' + data.albums[i].path + '/' + data.albums[i].pictures[j].imgLoRes);
+            // console.log(`data.albums[i].path + data.albums[i].pictures[j].imgLoRes: ` + '/' + data.albums[i].path + '/' + data.albums[i].pictures[j].imgLoRes);
+            // console.log(`image.url: ` + image.url);
+            // console.log('url', '/' + data.albums[i].path + '/' + data.albums[i].pictures[j].imgLoRes);
           }
         }
       }
@@ -129,8 +129,112 @@ window.addEventListener('load', (event) => {
   // ******************************************************************************
 
   // Functions and eventListiners for changing the rating an image
+  // *************************************************************
+  // (Annoying BS bug was fixed by having five separate methods instead of a single method (javaScript is dumb, I'm NOT the problem) )
+  let yourRating = 0;
+  let ratingsTotal = 0;
+  let ratingCounter = 0;
+  let ratingAverage = 0;
 
-  function rateImg() {
-    let rating = document.getElementById("rating-1");
+  function rateImg1() {
+    console.log("NU HAR DU TRYCKT PÅ EN STJÄRNA :)");
+    yourRating = 1;
+    ratingsTotal += yourRating;
+    ratingCounter++;
+    ratingAverage = ratingsTotal / ratingCounter;
+
+    let ratingVar = document.getElementById("rating-display");
+    ratingVar.innerText = "Du gav bilden betyget " + yourRating + " av 5! \nGenomsnitt: " + ratingAverage;
+
+    console.log("Din rating blev: " + yourRating);
+    console.log("Här är ratingVar: " + ratingVar);
   }
+
+  function rateImg2() {
+    console.log("NU HAR DU TRYCKT PÅ EN STJÄRNA :)");
+    yourRating = 2;
+    ratingsTotal += yourRating;
+    ratingCounter++;
+    ratingAverage = ratingsTotal / ratingCounter;
+
+    let ratingVar = document.getElementById("rating-display");
+    ratingVar.innerText = "Du gav bilden betyget " + yourRating + " av 5! \nGenomsnitt: " + ratingAverage;
+
+    console.log("Din rating blev: " + yourRating);
+    console.log("Här är ratingVar: " + ratingVar);
+  }
+
+  function rateImg3() {
+    console.log("NU HAR DU TRYCKT PÅ EN STJÄRNA :)");
+    yourRating = 3;
+    ratingsTotal += yourRating;
+    ratingCounter++;
+    ratingAverage = ratingsTotal / ratingCounter;
+
+    let ratingVar = document.getElementById("rating-display");
+    ratingVar.innerText = "Du gav bilden betyget " + yourRating + " av 5! \nGenomsnitt: " + ratingAverage;
+
+    console.log("Din rating blev: " + yourRating);
+    console.log("Här är ratingVar: " + ratingVar);
+  }
+
+  function rateImg4() {
+    console.log("NU HAR DU TRYCKT PÅ EN STJÄRNA :)");
+    yourRating = 4;
+    ratingsTotal += yourRating;
+    ratingCounter++;
+    ratingAverage = ratingsTotal / ratingCounter;
+
+    let ratingVar = document.getElementById("rating-display");
+    ratingVar.innerText = "Du gav bilden betyget " + yourRating + " av 5! \nGenomsnitt: " + ratingAverage;
+
+    console.log("Din rating blev: " + yourRating);
+    console.log("Här är ratingVar: " + ratingVar);
+  }
+
+  function rateImg5() {
+    console.log("NU HAR DU TRYCKT PÅ EN STJÄRNA :)");
+    yourRating = 5;
+    ratingsTotal += yourRating;
+    ratingCounter++;
+    ratingAverage = ratingsTotal / ratingCounter;
+
+    let ratingVar = document.getElementById("rating-display");
+    ratingVar.innerText = "Du gav bilden betyget " + yourRating + " av 5! \nGenomsnitt: " + ratingAverage;
+
+    console.log("Din rating blev: " + yourRating);
+    console.log("Här är ratingVar: " + ratingVar);
+  }
+
+  // Tryck på stjärna 3 = skicka en '3':a till rateImg functionen ("click", "rateImg");
+  let rateOne = document.getElementById("rating-1");
+  let rateTwo = document.getElementById("rating-2");
+  let rateThree = document.getElementById("rating-3");
+  let rateFour = document.getElementById("rating-4");
+  let rateFive = document.getElementById("rating-5");
+
+  rateOne.addEventListener("click", rateImg1);
+  rateTwo.addEventListener("click", rateImg2);
+  rateThree.addEventListener("click", rateImg3);
+  rateFour.addEventListener("click", rateImg4);
+  rateFive.addEventListener("click", rateImg5);
+  // Functions and eventListiners for changing the rating an image
+  // *************************************************************
+
+  // ***************************** SLIDESHOW ********************************
+  function slideShowGalaxiesFunc() {
+    // PSEUDO: Make "playSlideShowButton" visible and clickable so that it can START a SLIDESHOW
+
+    document.getElementById("picID0").addEventListener("click", )
+    document.getElementById("picID1").addEventListener("click", /* här ska vi kalle på en metod*/);
+    document.getElementById("picID2").addEventListener("click", );
+    document.getElementById("picID3").addEventListener("click", );
+    document.getElementById("picID4").addEventListener("click", );
+    document.getElementById("picID5").addEventListener("click", );
+  }
+
+  let slideShowBtnGalaxies = document.getElementById("slideshow-galaxies");
+  slideShowBtnGalaxies.addEventListener(click, slideShowGalaxiesFunc);
+
+  // ***************************** SLIDESHOW ********************************
 });
