@@ -8,19 +8,35 @@
     <title>Hubble-Telescope</title>
 </head>
 <body>
-    <h1>Hubble-Telescope</h1>
+    <main class="FlexWrapper">
+    <div class="flex-parent-element">
+        <a href="#" onclick="history.back()">
+            <header id="back-button" class="FlexItem FlexHeader">
+                Tillbaka
+            </header>
+        </a>
+        <header id="bild-titel" class="FlexItem FlexHeader">
+                Hubble-Telescope
+        </header>
+    </div>
     <div id="HubbleTelescope-header-image">    
-        <p>Header image</p>   
+    
         <!--
             Här inne bör header image för albumet Hubble-Telescope placeras
         -->
     </div>
     <div id="pics-from-hubbleTelescope-album-div">
-        <p>Galleri</p>  
+         
         <!--
             Här inne bör bilderna från albumet Hubble-telescope placeras
         -->
     </div>
     <script type="module" src="./script/hubbleTelescope.js"></script>
+    <button id="slideshow-galaxies">Välj bilder till Slideshow</button>
+    <button id="slideshow-galaxies-show">Visa Slideshow</button>
 </body>
+
+
+
+</main>
 </html>

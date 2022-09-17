@@ -8,21 +8,35 @@
     <title>Galaxies</title>
 </head>
 <body>
-    <h1>Galaxer</h1>
-    <div id="galaxies-header-image">    
-        <p>Header image</p>   
+    <main class="FlexWrapper">
+
+    <div class="flex-parent-element">
+        <a href="#" onclick="history.back()">
+            <header id="back-button" class="FlexItem FlexHeader">
+                Tillbaka
+            </header>
+        </a>
+        <header id="bild-titel" class="FlexItem FlexHeader">
+                Galaxer
+        </header>
+    </div>
+      </nav>
+    <div id="galaxies-header-image">     
         <!--
             Här inne bör header image för albumet galaxies placeras
         -->
     </div>
-    <div id="pics-from-galaxies-album-div">
-        <p>Galleri</p>  
-        <button id="slideshow-galaxies">Välj bilder till Slideshow</button>
+    <div id="pics-from-galaxies-album-div">  
+        
         <!--
             Här inne bör bilderna från albumet galaxies placeras
         -->
     </div>
+    <button id="slideshow-galaxies">Välj bilder till Slideshow</button>
     <button id="slideshow-galaxies-show">Visa Slideshow</button>
     <script type="module" src="./script/galaxies.js"></script>
 </body>
+
+
+</main>
 </html>

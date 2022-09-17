@@ -8,19 +8,24 @@
     <title>Planeter</title>
 </head>
 <body>
-    <h1>Planeter</h1>
-    <div id="planets-header-image">    
-        <p>Header image</p>   
-        <!--
-            Här inne bör header image för albumet planets placeras
-        -->
-    </div>
-    <div id="pics-from-planets-album-div">
-        <p>Galleri</p>  
+    <main class="FlexWrapper">
+        <div class="flex-parent-element">
+            <a href="#" onclick="history.back()">
+                <header id="back-button" class="FlexItem FlexHeader">
+                    Tillbaka
+                </header>
+            </a>
+            <header id="bild-titel" class="FlexItem FlexHeader">
+                    Planeter
+            </header>
+        </div>
+    <div id="pics-from-planets-album-div"> 
         <!--
             Här inne bör bilderna från albumet planets placeras
         -->
     </div>
     <script type="module" src="./script/planets.js"></script>
+    <button id="slideshow-galaxies">Välj bilder till Slideshow</button>
+    <button id="slideshow-galaxies-show">Visa Slideshow</button>
 </body>
 </html>

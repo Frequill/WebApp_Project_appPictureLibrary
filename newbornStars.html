@@ -8,19 +8,25 @@
     <title>Nyfödda-stjärnor</title>
 </head>
 <body>
-    <h1>Nyfödda-stjärnor</h1>
-    <div id="newbornStars-header-image">    
-        <p>Header image</p>   
-        <!--
-            Här inne bör header image för albumet new born stars placeras
-        -->
-    </div>
+    <main class="FlexWrapper">
+        <div class="flex-parent-element">
+            <a href="#" onclick="history.back()">
+                <header id="back-button" class="FlexItem FlexHeader">
+                    Tillbaka
+                </header>
+            </a>
+            <header id="bild-titel" class="FlexItem FlexHeader">
+                    Nyfödda-stjärnor
+            </header>
+        </div>
     <div id="pics-from-newbornStars-album-div">
-        <p>Galleri</p>  
+          
         <!--
             Här inne bör bilderna från albumet new born stars placeras
         -->
     </div>
     <script type="module" src="./script/newbornStars.js"></script>
+    <button id="slideshow-galaxies">Välj bilder till Slideshow</button>
+    <button id="slideshow-galaxies-show">Visa Slideshow</button>
 </body>
 </html>
