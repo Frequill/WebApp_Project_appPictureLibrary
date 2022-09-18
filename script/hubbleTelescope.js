@@ -2,12 +2,22 @@
 
 import * as lib from '../model/picture-library-browser.js';                 // NEEDED ??
 
+let picsFromHubbleTelescopeAlbum = document.getElementById("pics-from-hubbleTelescope-album-div");
+let headerImageHubbleAlbum = document.getElementById("HubbleTelescope-header-image");
+let slideShowHubble = document.getElementById("slideshow");                 // for slideshow
+
+/* ----------------------------------- SLIDESHOW ---------------------------------------- */
+
+let startPoint = 0
+let images = [];
+let time = 2000;
+
+/* ----------------------------------- SLIDESHOW ---------------------------------------- */
+
 window.onload = function () {
 
-    let picsFromHubbleTelescopeAlbum = document.getElementById("pics-from-hubbleTelescope-album-div");
-    let headerImageHubbleAlbum = document.getElementById("HubbleTelescope-header-image");
-
     console.log("picsFromHubbleTelescopeAlbum: " + picsFromHubbleTelescopeAlbum);
+
 
     fetch("../app-data/library/picture-library.json")
         .then(function (resp) {
@@ -19,13 +29,57 @@ window.onload = function () {
             console.log("data: " + data);
             for (let i = 0; i < data.albums[4].pictures.length; i++) {
                 picsFromHubbleTelescopeAlbum.innerHTML += (`<img src="` + data.albums[4].path + `/` + data.albums[4].pictures[i].imgLoRes + `">`);
+                console.log("picsFromHubbleTelescopeAlbum.innerHTML: " + picsFromHubbleTelescopeAlbum.innerHTML);
+                console.log(`"` + data.albums[4].path + `/` + data.albums[4].pictures[i].imgLoRes + `"`);       // For the slideshow
+                images[i] = data.albums[4].path + `/` + data.albums[4].pictures[i].imgLoRes;        // For the slideshow
+                console.log("images[i]: " + images[i]);
             }
 
             headerImageHubbleAlbum.innerHTML += (`<img src="../app-data/library/pictures/album-header/GSFC_20171208_Archive_e002151~small.jpg">`);
             // app-data\library\pictures\album-header\GSFC_20171208_Archive_e002151~small.jpg
+
+            setInterval(function () {
+                for (let j = 0; j < 11; j++) {
+
+                    slideShowHubble.setAttribute("src", images[startPoint]);
+                    console.log("slideShowHubble.src: " + slideShowHubble.src);
+
+                    if (startPoint < images.length - 1) {
+                        startPoint++;
+                    } else {
+                        startPoint = 0;
+                    }
+                    // sleep
+                    console.log("slideShowHubble.src: " + slideShowHubble.src);
+                }
+            }, time);
         });
 
+    /* ----------------------------------- SLIDESHOW ---------------------------------------- */
+
+    /*
+        function changeImg() {
+            slideShowHubble.style = "color: red;"
+            slideShowHubble.setAttribute.src = "../" + images[startPoint];
+            console.log("slideShowHubble.src: " + slideShowHubble.src);
+            if (startPoint < images.length - 1) {
+                startPoint++;
+            } else {
+                startPoint = 0;
+            }
+    
+            setTimeout("changeImg()", time);
+        }
+    
+        changeImg();
+    */
+
+    // document.getElementById("slideshow-div").style = "width: 5%, height: 5%, background-color: blue";
+
+    /* ----------------------------------- SLIDESHOW ---------------------------------------- */
+
     // -----------------------------TEST FÖR IMAGE CLICK FUNCTIONALITY----------------------------------------
+    /*
 
     let library;  //Global varibale, Loaded async from the current server in window.load event
 
@@ -92,4 +146,5 @@ window.onload = function () {
             });
     });
     // -----------------------------TEST FÖR IMAGE CLICK FUNCTIONALITY----------------------------------------
+    */
 }

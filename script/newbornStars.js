@@ -1,11 +1,17 @@
 'use strict'
 
 import * as lib from '../model/picture-library-browser.js';                 // NEEDED ??
+let picsFromNewBornStarsAlbum = document.getElementById("pics-from-newbornStars-album-div");
+let headerImageNewBornStarsAlbum = document.getElementById("new-born-stars-header-image");
+let slideShowHubble = document.getElementById("slideshow");                 // for slideshow
 
+/* ----------------------------------- SLIDESHOW ---------------------------------------- */
+
+let startPoint = 0
+let images = [];
+let time = 2000;
 window.onload = function () {
 
-    let picsFromNewBornStarsAlbum = document.getElementById("pics-from-newbornStars-album-div");
-    let headerImageNewBornStarsAlbum = document.getElementById("new-born-stars-header-image");
 
     console.log("picsFromNewBornStarsAlbum: " + picsFromNewBornStarsAlbum);
 
@@ -19,9 +25,25 @@ window.onload = function () {
             console.log("data: " + data);
             for (let i = 0; i < data.albums[2].pictures.length; i++) {
                 picsFromNewBornStarsAlbum.innerHTML += (`<img src="` + data.albums[2].path + `/` + data.albums[2].pictures[i].imgLoRes + `">`);
+                images[i] = data.albums[2].path + `/` + data.albums[2].pictures[i].imgLoRes;        // For the slideshow
             }
             headerImageNewBornStarsAlbum.innerHTML += (`<img src="../app-data/library/pictures/album-header/A Galactic Spectacle_4862916839_o~small.jpg">`);
-            // app-data\library\pictures\album-header\A Galactic Spectacle_4862916839_o~small.jpg
+
+            setInterval(function () {
+                for (let j = 0; j < 11; j++) {
+
+                    slideShowHubble.setAttribute("src", images[startPoint]);
+                    console.log("slideShowHubble.src: " + slideShowHubble.src);
+
+                    if (startPoint < images.length - 1) {
+                        startPoint++;
+                    } else {
+                        startPoint = 0;
+                    }
+                    // sleep
+                    console.log("slideShowHubble.src: " + slideShowHubble.src);
+                }
+            }, time);
         });
 
     // -----------------------------TEST FÖR IMAGE CLICK FUNCTIONALITY----------------------------------------

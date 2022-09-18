@@ -4,7 +4,8 @@ body {
   padding: 2px;
   font-family: Copperplate, Fantasy, monospace, 'Oswald', sans-serif;
   color: #ebebeb;
-  background-color: rgb(112, 112, 112);
+  background: rgb(118, 122, 0);
+  background: linear-gradient(90deg, rgba(118, 122, 0, 1) 0%, rgba(69, 40, 0, 1) 100%);
 }
 
 .FlexWrapper {
@@ -64,20 +65,37 @@ body {
   /*position: absolute;*/
 }
 
+#planets-header-image img {
+  background: greenyellow;
+  box-shadow: 0 0 100px greenyellow;
+}
+
 div img {
   display: block;
   margin-left: auto;
   margin-right: auto;
   padding: 10px;
+  max-width: 90%;
+  max-height: 90%;
 }
 
-#planets-header-image img {
-  background: greenyellow; 
-  box-shadow: 0 0 100px greenyellow; 
+#HubbleTelescope-header-image img {
+  background: greenyellow;
+  box-shadow: 0 0 100px greenyellow;
 }
 
 .slideshow-buttons {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-top: 5%;
+}
+
+#slideshow {
+  background: rgb(56, 1, 8);
+  box-shadow: 0 0 100px rgb(185, 0, 139);
+}
+
+.footer {
+  min-height: 100%;
 }

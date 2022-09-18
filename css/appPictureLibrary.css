@@ -3,14 +3,14 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background: rgb(1,66,27);
+  background: linear-gradient(90deg, rgba(1,66,27,1) 0%, rgba(0,30,195,1) 100%);
 }
 
 .FlexWrap {
-  background-color: rgb(112, 112, 112);
   font-family: 'Oswald', sans-serif;
   height: 100%;
   width: 100%;
-
 
   display: flex;
   flex-wrap: wrap;
@@ -37,10 +37,8 @@ img {
 }
 
 .top-nav-bar {
-  background-color: rgba(34, 33, 33, 0.795);
   min-width: 90vw;
   min-height: 10vh;
-
 
   display: flex;
   justify-content: space-evenly;
@@ -117,7 +115,7 @@ img {
     flex-direction: column;
     flex-wrap: wrap;
     position: fixed;
-    background-color: rgba(34, 33, 33, 0.795);
+    /* background-color: rgba(34, 33, 33, 0.795); */
     justify-content: space-evenly;
     flex-grow: 1;
   }
@@ -126,16 +124,10 @@ img {
     float: right;
     width: 80%;
   }
-
-
 }
 
 @media only screen and (min-width: 1120px) {
   .side-nav-bar {
     display: none;
   }
-
-
-
-
 }

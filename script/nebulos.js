@@ -2,10 +2,18 @@
 
 import * as lib from '../model/picture-library-browser.js';                 // NEEDED ??
 
+let picsFromNebulosAlbum = document.getElementById("pics-from-nebulos-album-div");
+let headerImageNebuAlbum = document.getElementById("nebulos-header-image");
+let slideShowHubble = document.getElementById("slideshow");                 // for slideshow
+
+/* ----------------------------------- SLIDESHOW ---------------------------------------- */
+
+let startPoint = 0
+let images = [];
+let time = 2000;
+
 window.onload = function () {
 
-    let picsFromNebulosAlbum = document.getElementById("pics-from-nebulos-album-div");
-    let headerImageNebuAlbum = document.getElementById("nebulos-header-image");
 
 
     console.log("picsFromNebulosAlbum: " + picsFromNebulosAlbum);
@@ -20,9 +28,24 @@ window.onload = function () {
             console.log("data: " + data);
             for (let i = 0; i < data.albums[1].pictures.length; i++) {
                 picsFromNebulosAlbum.innerHTML += (`<img src="` + data.albums[1].path + `/` + data.albums[1].pictures[i].imgLoRes + `">`);
+                images[i] = data.albums[1].path + `/` + data.albums[1].pictures[i].imgLoRes;        // For the slideshow
             }
             headerImageNebuAlbum.innerHTML += (`<img src="../app-data/library/pictures/album-header/GSFC_20171208_Archive_e000383~small.jpg">`);
-            // app-data\library\pictures\album-header\GSFC_20171208_Archive_e000383~small.jpg
+            setInterval(function () {
+                for (let j = 0; j < 11; j++) {
+
+                    slideShowHubble.setAttribute("src", images[startPoint]);
+                    console.log("slideShowHubble.src: " + slideShowHubble.src);
+
+                    if (startPoint < images.length - 1) {
+                        startPoint++;
+                    } else {
+                        startPoint = 0;
+                    }
+                    // sleep
+                    console.log("slideShowHubble.src: " + slideShowHubble.src);
+                }
+            }, time);
         });
 
     // -----------------------------TEST FÖR IMAGE CLICK FUNCTIONALITY----------------------------------------

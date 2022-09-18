@@ -2,10 +2,18 @@
 
 import * as lib from '../model/picture-library-browser.js';                 // NEEDED ??
 
+let picsFromGalaxiesAlbum = document.getElementById("pics-from-galaxies-album-div");
+let headerImageGalaxiesAlbum = document.getElementById("galaxies-header-image");
+let slideShowHubble = document.getElementById("slideshow");                 // for slideshow
+
+/* ----------------------------------- SLIDESHOW ---------------------------------------- */
+
+let startPoint = 0
+let images = [];
+let time = 2000;
+
 window.onload = function () {
 
-    let picsFromGalaxiesAlbum = document.getElementById("pics-from-galaxies-album-div");
-    let headerImageGalaxiesAlbum = document.getElementById("galaxies-header-image");
 
     console.log("picsFromGalaxiesAlbum: " + picsFromGalaxiesAlbum);
 
@@ -21,10 +29,26 @@ window.onload = function () {
 
                 // FUNKAR DEN HÄR NEDAN ??
                 picsFromGalaxiesAlbum.innerHTML += (`<img src="` + data.albums[0].path + `/` + data.albums[0].pictures[i].imgLoRes + `" id='` + "picID" + i + `'>`);
+                images[i] = data.albums[0].path + `/` + data.albums[0].pictures[i].imgLoRes;        // For the slideshow
             }
 
             console.log(`<img src="../app-data/library/pictures/album-header/PIA04921~small.jpg">`);
             headerImageGalaxiesAlbum.innerHTML += (`<img src="../app-data/library/pictures/album-header/PIA04921~small.jpg">`);
+            setInterval(function () {
+                for (let j = 0; j < 11; j++) {
+
+                    slideShowHubble.setAttribute("src", images[startPoint]);
+                    console.log("slideShowHubble.src: " + slideShowHubble.src);
+
+                    if (startPoint < images.length - 1) {
+                        startPoint++;
+                    } else {
+                        startPoint = 0;
+                    }
+                    // sleep
+                    console.log("slideShowHubble.src: " + slideShowHubble.src);
+                }
+            }, time);
         });
 
     // -----------------------------TEST FÖR IMAGE CLICK FUNCTIONALITY----------------------------------------
