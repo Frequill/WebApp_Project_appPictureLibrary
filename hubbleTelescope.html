@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,36 +8,37 @@
     <link rel="stylesheet" href="/css/hubbleTelescope.css" />
     <title>Hubble-Telescope</title>
 </head>
+
 <body>
     <main class="FlexWrapper">
-    <div class="flex-parent-element">
-        <a href="#" onclick="history.back()">
-            <header id="back-button" class="FlexItem FlexHeader">
-                Tillbaka
+        <div class="flex-parent-element">
+            <a href="#" onclick="history.back()">
+                <header id="back-button" class="FlexItem FlexHeader">
+                    Tillbaka
+                </header>
+            </a>
+            <header id="bild-titel" class="FlexItem FlexHeader">
+                Hubble-teleskopet
             </header>
-        </a>
-        <header id="bild-titel" class="FlexItem FlexHeader">
-                Hubble-Telescope
-        </header>
-    </div>
-    <div id="HubbleTelescope-header-image">    
-    
-        <!--
+        </div>
+        <div id="HubbleTelescope-header-image">
+            <!--
             Här inne bör header image för albumet Hubble-Telescope placeras
         -->
-    </div>
-    <div id="pics-from-hubbleTelescope-album-div">
-         
-        <!--
+        </div>
+        <div class="slideshow-buttons">
+            <button id="slideshow-galaxies">Välj bilder till Slideshow</button>
+            <button id="slideshow-galaxies-show">Visa Slideshow</button>
+        </div>
+        <div id="pics-from-hubbleTelescope-album-div">
+            <!--
             Här inne bör bilderna från albumet Hubble-telescope placeras
         -->
-    </div>
+        </div>
+    </main>
+
     <script type="module" src="./script/hubbleTelescope.js"></script>
-    <button id="slideshow-galaxies">Välj bilder till Slideshow</button>
-    <button id="slideshow-galaxies-show">Visa Slideshow</button>
+
 </body>
 
-
-
-</main>
 </html>

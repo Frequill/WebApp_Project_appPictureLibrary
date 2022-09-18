@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,36 +8,36 @@
     <link rel="stylesheet" href="/css/galaxies.css" />
     <title>Galaxies</title>
 </head>
+
 <body>
     <main class="FlexWrapper">
-
-    <div class="flex-parent-element">
-        <a href="#" onclick="history.back()">
-            <header id="back-button" class="FlexItem FlexHeader">
-                Tillbaka
-            </header>
-        </a>
-        <header id="bild-titel" class="FlexItem FlexHeader">
+        <div class="flex-parent-element">
+            <a href="#" onclick="history.back()">
+                <header id="back-button" class="FlexItem FlexHeader">
+                    Tillbaka
+                </header>
+            </a>
+            <header id="bild-titel" class="FlexItem FlexHeader">
                 Galaxer
-        </header>
-    </div>
-      </nav>
-    <div id="galaxies-header-image">     
-        <!--
+            </header>
+        </div>
+        <div id="galaxies-header-image">
+            <!--
             Här inne bör header image för albumet galaxies placeras
         -->
-    </div>
-    <div id="pics-from-galaxies-album-div">  
-        
-        <!--
+        </div>
+        <div class="slideshow-buttons">
+            <button id="slideshow-galaxies">Välj bilder till Slideshow</button>
+            <button id="slideshow-galaxies-show">Visa Slideshow</button>
+        </div>
+        <div id="pics-from-galaxies-album-div">
+            <!--
             Här inne bör bilderna från albumet galaxies placeras
         -->
-    </div>
-    <button id="slideshow-galaxies">Välj bilder till Slideshow</button>
-    <button id="slideshow-galaxies-show">Visa Slideshow</button>
+        </div>
+    </main>
+
     <script type="module" src="./script/galaxies.js"></script>
 </body>
 
-
-</main>
 </html>

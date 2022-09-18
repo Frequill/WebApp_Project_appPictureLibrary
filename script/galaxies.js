@@ -20,7 +20,7 @@ window.onload = function () {
             for (let i = 0; i < data.albums[0].pictures.length; i++) {
 
                 // FUNKAR DEN HÄR NEDAN ??
-                picsFromGalaxiesAlbum.innerHTML += (`<img src="` + data.albums[0].path + `/` + data.albums[0].pictures[i].imgLoRes + `" id='` + "picID" + i + `'>`); 
+                picsFromGalaxiesAlbum.innerHTML += (`<img src="` + data.albums[0].path + `/` + data.albums[0].pictures[i].imgLoRes + `" id='` + "picID" + i + `'>`);
             }
 
             console.log(`<img src="../app-data/library/pictures/album-header/PIA04921~small.jpg">`);

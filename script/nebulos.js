@@ -5,6 +5,8 @@ import * as lib from '../model/picture-library-browser.js';                 // N
 window.onload = function () {
 
     let picsFromNebulosAlbum = document.getElementById("pics-from-nebulos-album-div");
+    let headerImageNebuAlbum = document.getElementById("nebulos-header-image");
+
 
     console.log("picsFromNebulosAlbum: " + picsFromNebulosAlbum);
 
@@ -19,6 +21,8 @@ window.onload = function () {
             for (let i = 0; i < data.albums[1].pictures.length; i++) {
                 picsFromNebulosAlbum.innerHTML += (`<img src="` + data.albums[1].path + `/` + data.albums[1].pictures[i].imgLoRes + `">`);
             }
+            headerImageNebuAlbum.innerHTML += (`<img src="../app-data/library/pictures/album-header/GSFC_20171208_Archive_e000383~small.jpg">`);
+            // app-data\library\pictures\album-header\GSFC_20171208_Archive_e000383~small.jpg
         });
 
     // -----------------------------TEST FÖR IMAGE CLICK FUNCTIONALITY----------------------------------------

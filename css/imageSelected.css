@@ -6,11 +6,11 @@ body {
   padding: 0px;
   font-family: 'Oswald', sans-serif;
   color: #ebebeb;
-  background-color: rgb(112,112,112);
+  background-color: rgb(112, 112, 112);
 }
 
 .FlexWrapper {
-  background-color: rgb(112,112,112);
+  background-color: rgb(112, 112, 112);
   font-family: 'Oswald', sans-serif;
   height: 98vh;
   width: 100vw;
@@ -52,9 +52,11 @@ body {
 
   margin-right: 50px;
   margin-bottom: 20px;
-  min-height: 50%;/*400px;*/
+  min-height: 50%;
+  /*400px;*/
 
-  display: inline-block; /* I ADDED THIS NOW FOR TEST HIHI REMOVE ME IF PROBLEM PERSISTS! //Julius Thomsen */
+  display: inline-block;
+  /* I ADDED THIS NOW FOR TEST HIHI REMOVE ME IF PROBLEM PERSISTS! //Julius Thomsen */
 
   background: #8A2387;
   /* fallback for old browsers */
@@ -267,7 +269,8 @@ Credit goes to https://codepen.io/knyttneve/pen/EBNqPN
 
 
   .FlexSideTwo {
-    width: 25vh;/*150px;*/
+    width: 25vh;
+    /*150px;*/
     border-style: groove;
     border-width: 6px;
     border-color: white;
@@ -276,9 +279,10 @@ Credit goes to https://codepen.io/knyttneve/pen/EBNqPN
     color: white;
     flex: 0.5 0 auto;
 
-    display: inline-block; /* I ADDED THIS NOW FOR TEST HIHI REMOVE ME IF PROBLEM PERSISTS! //Julius Thomsen */
+    display: inline-block;
+    /* I ADDED THIS NOW FOR TEST HIHI REMOVE ME IF PROBLEM PERSISTS! //Julius Thomsen */
     margin-right: 50px;
-    margin-bottom: 20px; 
+    margin-bottom: 20px;
     max-height: 80%;
 
     background: #8A2387;
@@ -314,7 +318,7 @@ Credit goes to https://codepen.io/knyttneve/pen/EBNqPN
     margin-top: 21px;
     text-align: center;
     display: inline-block;
-    
+
     /*position: absolute;*/
   }
 
@@ -371,7 +375,8 @@ Credit goes to https://codepen.io/knyttneve/pen/EBNqPN
     font: 16px/26px Georgia, Garamond, Serif;
     overflow: auto;
   }
-  .FlexSideTwo{
+
+  .FlexSideTwo {
     min-height: 80%;
     flex: 1 0;
     overflow: auto;

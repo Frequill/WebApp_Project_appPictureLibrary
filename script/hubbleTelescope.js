@@ -5,6 +5,7 @@ import * as lib from '../model/picture-library-browser.js';                 // N
 window.onload = function () {
 
     let picsFromHubbleTelescopeAlbum = document.getElementById("pics-from-hubbleTelescope-album-div");
+    let headerImageHubbleAlbum = document.getElementById("HubbleTelescope-header-image");
 
     console.log("picsFromHubbleTelescopeAlbum: " + picsFromHubbleTelescopeAlbum);
 
@@ -19,6 +20,9 @@ window.onload = function () {
             for (let i = 0; i < data.albums[4].pictures.length; i++) {
                 picsFromHubbleTelescopeAlbum.innerHTML += (`<img src="` + data.albums[4].path + `/` + data.albums[4].pictures[i].imgLoRes + `">`);
             }
+
+            headerImageHubbleAlbum.innerHTML += (`<img src="../app-data/library/pictures/album-header/GSFC_20171208_Archive_e002151~small.jpg">`);
+            // app-data\library\pictures\album-header\GSFC_20171208_Archive_e002151~small.jpg
         });
 
     // -----------------------------TEST FÖR IMAGE CLICK FUNCTIONALITY----------------------------------------

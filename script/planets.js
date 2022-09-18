@@ -5,6 +5,7 @@ import * as lib from '../model/picture-library-browser.js';                 // N
 window.onload = function () {
 
     let picsFromPlanetsAlbum = document.getElementById("pics-from-planets-album-div");
+    let headerImagePlanetsAlbum = document.getElementById("planets-header-image");
 
     console.log("picsFromPlanetsAlbum: " + picsFromPlanetsAlbum);
 
@@ -19,6 +20,8 @@ window.onload = function () {
             for (let i = 0; i < data.albums[3].pictures.length; i++) {
                 picsFromPlanetsAlbum.innerHTML += (`<img src="` + data.albums[3].path + `/` + data.albums[3].pictures[i].imgLoRes + `">`);
             }
+            headerImagePlanetsAlbum.innerHTML += (`<img src="../app-data/library/pictures/album-header/hubble-captures-vivid-auroras-in-jupiters-atmosphere_28000029525_o~small.jpg">`);
+            // app-data\library\pictures\album-header\hubble-captures-vivid-auroras-in-jupiters-atmosphere_28000029525_o~small.jpg
         });
 
     // -----------------------------TEST FÖR IMAGE CLICK FUNCTIONALITY----------------------------------------

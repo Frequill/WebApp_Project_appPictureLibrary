@@ -6,7 +6,7 @@ body {
 }
 
 .FlexWrap {
-  background-color: rgb(112,112,112);
+  background-color: rgb(112, 112, 112);
   font-family: 'Oswald', sans-serif;
   height: 100%;
   width: 100%;
@@ -26,7 +26,7 @@ body {
 
 .FlexItem {
   width: 200px;
-  
+
   /* fixed size will demonstrate the wrap */
 }
 
@@ -90,7 +90,7 @@ img {
 
 }
 
-.navBarTwo:hover{
+.navBarTwo:hover {
   transition: 0.25s;
   text-decoration: underline;
   background-color: rgb(255, 194, 80);

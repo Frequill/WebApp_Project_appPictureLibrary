@@ -225,12 +225,12 @@ window.addEventListener('load', (event) => {
   function slideShowGalaxiesFunc() {
     // PSEUDO: Make "playSlideShowButton" visible and clickable so that it can START a SLIDESHOW
 
-    document.getElementById("picID0").addEventListener("click", )
+    document.getElementById("picID0").addEventListener("click",)
     document.getElementById("picID1").addEventListener("click", /* här ska vi kalle på en metod*/);
-    document.getElementById("picID2").addEventListener("click", );
-    document.getElementById("picID3").addEventListener("click", );
-    document.getElementById("picID4").addEventListener("click", );
-    document.getElementById("picID5").addEventListener("click", );
+    document.getElementById("picID2").addEventListener("click",);
+    document.getElementById("picID3").addEventListener("click",);
+    document.getElementById("picID4").addEventListener("click",);
+    document.getElementById("picID5").addEventListener("click",);
   }
 
   let slideShowBtnGalaxies = document.getElementById("slideshow-galaxies");

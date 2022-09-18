@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="/css/planets.css" />
     <title>Planeter</title>
 </head>
+
 <body>
     <main class="FlexWrapper">
         <div class="flex-parent-element">
@@ -16,16 +18,26 @@
                 </header>
             </a>
             <header id="bild-titel" class="FlexItem FlexHeader">
-                    Planeter
+                Planeter
             </header>
         </div>
-    <div id="pics-from-planets-album-div"> 
-        <!--
+        <div id="planets-header-image">
+            <!--
+                Här inne bör header image för albumet nebulos placeras
+            -->
+        </div>
+        <div class="slideshow-buttons">
+            <button id="slideshow-galaxies">Välj bilder till Slideshow</button>
+            <button id="slideshow-galaxies-show">Visa Slideshow</button>
+        </div>
+        <div id="pics-from-planets-album-div">
+            <!--
             Här inne bör bilderna från albumet planets placeras
         -->
-    </div>
+        </div>
+    </main>
+
     <script type="module" src="./script/planets.js"></script>
-    <button id="slideshow-galaxies">Välj bilder till Slideshow</button>
-    <button id="slideshow-galaxies-show">Visa Slideshow</button>
 </body>
+
 </html>

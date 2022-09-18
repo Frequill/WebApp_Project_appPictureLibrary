@@ -5,6 +5,7 @@ import * as lib from '../model/picture-library-browser.js';                 // N
 window.onload = function () {
 
     let picsFromNewBornStarsAlbum = document.getElementById("pics-from-newbornStars-album-div");
+    let headerImageNewBornStarsAlbum = document.getElementById("new-born-stars-header-image");
 
     console.log("picsFromNewBornStarsAlbum: " + picsFromNewBornStarsAlbum);
 
@@ -19,6 +20,8 @@ window.onload = function () {
             for (let i = 0; i < data.albums[2].pictures.length; i++) {
                 picsFromNewBornStarsAlbum.innerHTML += (`<img src="` + data.albums[2].path + `/` + data.albums[2].pictures[i].imgLoRes + `">`);
             }
+            headerImageNewBornStarsAlbum.innerHTML += (`<img src="../app-data/library/pictures/album-header/A Galactic Spectacle_4862916839_o~small.jpg">`);
+            // app-data\library\pictures\album-header\A Galactic Spectacle_4862916839_o~small.jpg
         });
 
     // -----------------------------TEST FÖR IMAGE CLICK FUNCTIONALITY----------------------------------------
