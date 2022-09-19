@@ -18,7 +18,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 
   for (const album of library.albums) {
 
-    renderImage(album.headerImage, album.id);
+    // renderImage(album.headerImage, album.id);
     for (const picture of album.pictures) {
       renderImage(`${album.path}/${picture.imgLoRes}`, picture.id);
       // renderImage(`${album.path}/${picture.imgHiRes}`, picture.id);
