@@ -55,7 +55,6 @@ function imageClick() {
   localStorage.setItem("pictureId", this.getAttribute('id'));
   console.log("imageClick funktionen kör! (Här är den i localStorage): " + JSON.stringify(localStorage.getItem("pictureId")));
   location.href = 'imageSelected.html'; // Jump to the 'imageSelected' page
-  // ************* HÄR VERKAR DET SOM ATT 'clickedImageID' töms och blir "undefined" igen *************
 }
 
 window.onload = function () {
@@ -75,6 +74,24 @@ window.onload = function () {
 
 // ***************************************** imageSelected.html *****************************************
 window.addEventListener('load', (event) => {
+
+  // TEST
+  if (localStorage.getItem(localStorage.getItem("pictureId" + "Comment")) != "" || localStorage.getItem(localStorage.getItem("pictureId" + "Comment")) != undefined) {
+
+    let commentField = document.getElementById("comments-display-field");
+    commentField.innerHTML = localStorage.getItem(localStorage.getItem("pictureId" + "Comment"));
+    console.log("Här är commentField i localStorage: " + JSON.stringify(commentField));
+  }
+
+  if (localStorage.getItem(localStorage.getItem("pictureId" + "Title")) != "" || localStorage.getItem(localStorage.getItem("pictureId" + "Title")) != undefined) {
+
+    let imgTitle = document.getElementById("bild-titel");
+    imgTitle.innerHTML = localStorage.getItem(localStorage.getItem("pictureId" + "Title"));
+    console.log("Här är imgTitle i localStorage: " + JSON.stringify(imgTitle));
+    // console.log("Här är imgTitle i localStorage: " + JSON.parse(imgTitle));
+  }
+  //TEST
+
   console.log('page is fully loaded');
   let imageTitle = document.getElementById("bild-titel");
   let image = document.getElementById("highlighted-image"); // picture
@@ -115,12 +132,22 @@ window.addEventListener('load', (event) => {
   function changeImgComment() {
     let newComment = document.getElementById("comment-field-text").value;
     let commentField = document.getElementById("comments-display-field");
+
+    // TEST
+    localStorage.setItem(localStorage.getItem("pictureId") + "Comment", newComment); // (pucture1Comment, *det du skrev som ny kommentar*)
+    // TEST
+
     commentField.innerHTML = newComment;
   }
 
   function changeImgTitle() {
     let newTitle = document.getElementById("comment-field-text").value;
     let imgTitle = document.getElementById("bild-titel");
+
+    // TEST
+    localStorage.setItem(localStorage.getItem("pictureId") + "Title", newTitle);
+    // TEST
+
     imgTitle.innerHTML = newTitle;
   }
 
