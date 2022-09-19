@@ -5,7 +5,6 @@
 import * as lib from '../model/picture-library-browser.js';
 
 // ********************************************* index.html *********************************************
-
 const libraryJSON = "picture-library.json";
 
 let library;  //Global varibale, Loaded async from the current server in window.load event
@@ -87,6 +86,10 @@ window.addEventListener('load', (event) => {
     document.getElementById("bild-titel").innerText = localStorage.getItem(localStorage.getItem("pictureId") + "Title");
   }
 
+  if (localStorage.getItem(localStorage.getItem("pictureId") + "avgRating")) {
+    document.getElementById("rating-display").innerText = "Snittbetyg: " + localStorage.getItem(localStorage.getItem("pictureId") + "avgRating");
+  }
+
   console.log('page is fully loaded');
   let imageTitle = document.getElementById("bild-titel");
   let image = document.getElementById("highlighted-image"); // picture
@@ -125,11 +128,9 @@ window.addEventListener('load', (event) => {
     let newComment = document.getElementById("comment-field-text").value;
     let commentField = document.getElementById("comments-display-field");
 
-    // TEST
     localStorage.setItem(localStorage.getItem("pictureId") + "Comment", newComment); // (picture1Comment, *det du skrev som ny kommentar*)
     console.log("Här är picture1Comment: " + localStorage.getItem("picture1Comment")); // Använd "picture1" som test bild!  ---  DEN HÄR FUNGERAR, Sparas i localStorage! 
-    // TEST
-
+    
     commentField.innerHTML = newComment;
     console.log(commentField);
     console.log(commentField.innerHTML)
@@ -139,9 +140,7 @@ window.addEventListener('load', (event) => {
     let newTitle = document.getElementById("comment-field-text").value;
     let imgTitle = document.getElementById("bild-titel");
 
-    // TEST
     localStorage.setItem(localStorage.getItem("pictureId") + "Title", newTitle);
-    // TEST
 
     imgTitle.innerHTML = newTitle;
   }
@@ -153,23 +152,49 @@ window.addEventListener('load', (event) => {
   // Functions and eventListiners for changing the rating an image
   // *************************************************************
   // (Annoying BS bug was fixed by having five separate methods instead of a single method (javaScript is dumb, I'm NOT the problem))
-  let yourRating = 0;
-  let ratingsTotal = 0;
-  let ratingCounter = 0;
-  let ratingAverage = 0;
+  let yourRating;
+  let ratingsTotal;
+  let ratingCounter;
+  let ratingAverage;
+
+  // This IF-statement ensures that average rating of an UNRATED image starts at 0 (zero), while a previously rated image loads the last avrage rating!
+  if (localStorage.getItem(localStorage.getItem("pictureId") + "avgRating")){
+    ratingsTotal = parseInt(localStorage.getItem(localStorage.getItem("pictureId") + "totalRatings")); // This needed to be parsed back to an INT in order to not bug out
+    ratingCounter = localStorage.getItem(localStorage.getItem("pictureId") + "rateCount");
+    ratingAverage = localStorage.getItem(localStorage.getItem("pictureId") + "avgRating");
+  }
+  else {
+    ratingAverage = 0;
+    ratingCounter = 0;
+    ratingsTotal = 0;
+  }
+
+  console.log("Average rating of this image is: " + ratingAverage);
+  console.log("This image has been rated: " + ratingCounter + " times");
+  console.log("ratingsTotal: " + ratingsTotal);  
 
   function rateImg1() {
+    console.log("I början av metoden är ratingsTotal: " + ratingsTotal);  
+
     console.log("NU HAR DU TRYCKT PÅ EN STJÄRNA :)");
     yourRating = 1;
     ratingsTotal += yourRating;
     ratingCounter++;
     ratingAverage = ratingsTotal / ratingCounter;
 
+    console.log("När vi sparar ratingsTotal i localStorage ser den ut såhär: " + ratingsTotal); 
+
+    localStorage.setItem(localStorage.getItem("pictureId") + "totalRatings", ratingsTotal);
+    localStorage.setItem(localStorage.getItem("pictureId") + "rateCount", ratingCounter);
+    localStorage.setItem(localStorage.getItem("pictureId") + "avgRating", ratingAverage);
+    
     let ratingVar = document.getElementById("rating-display");
     ratingVar.innerText = "Du gav bilden betyget " + yourRating + " av 5! \nGenomsnitt: " + ratingAverage;
 
     console.log("Din rating blev: " + yourRating);
     console.log("Här är ratingVar: " + ratingVar);
+
+    console.log("I slutet av metoden är ratingsTotal: " + ratingsTotal); 
   }
 
   function rateImg2() {
@@ -178,6 +203,10 @@ window.addEventListener('load', (event) => {
     ratingsTotal += yourRating;
     ratingCounter++;
     ratingAverage = ratingsTotal / ratingCounter;
+
+    localStorage.setItem(localStorage.getItem("pictureId") + "totalRatings", ratingsTotal);
+    localStorage.setItem(localStorage.getItem("pictureId") + "rateCount", ratingCounter);
+    localStorage.setItem(localStorage.getItem("pictureId") + "avgRating", ratingAverage);
 
     let ratingVar = document.getElementById("rating-display");
     ratingVar.innerText = "Du gav bilden betyget " + yourRating + " av 5! \nGenomsnitt: " + ratingAverage;
@@ -193,6 +222,10 @@ window.addEventListener('load', (event) => {
     ratingCounter++;
     ratingAverage = ratingsTotal / ratingCounter;
 
+    localStorage.setItem(localStorage.getItem("pictureId") + "totalRatings", ratingsTotal);
+    localStorage.setItem(localStorage.getItem("pictureId") + "rateCount", ratingCounter);
+    localStorage.setItem(localStorage.getItem("pictureId") + "avgRating", ratingAverage);
+
     let ratingVar = document.getElementById("rating-display");
     ratingVar.innerText = "Du gav bilden betyget " + yourRating + " av 5! \nGenomsnitt: " + ratingAverage;
 
@@ -207,6 +240,10 @@ window.addEventListener('load', (event) => {
     ratingCounter++;
     ratingAverage = ratingsTotal / ratingCounter;
 
+    localStorage.setItem(localStorage.getItem("pictureId") + "totalRatings", ratingsTotal);
+    localStorage.setItem(localStorage.getItem("pictureId") + "rateCount", ratingCounter);
+    localStorage.setItem(localStorage.getItem("pictureId") + "avgRating", ratingAverage);
+
     let ratingVar = document.getElementById("rating-display");
     ratingVar.innerText = "Du gav bilden betyget " + yourRating + " av 5! \nGenomsnitt: " + ratingAverage;
 
@@ -220,6 +257,10 @@ window.addEventListener('load', (event) => {
     ratingsTotal += yourRating;
     ratingCounter++;
     ratingAverage = ratingsTotal / ratingCounter;
+
+    localStorage.setItem(localStorage.getItem("pictureId") + "totalRatings", ratingsTotal);
+    localStorage.setItem(localStorage.getItem("pictureId") + "rateCount", ratingCounter);
+    localStorage.setItem(localStorage.getItem("pictureId") + "avgRating", ratingAverage);
 
     let ratingVar = document.getElementById("rating-display");
     ratingVar.innerText = "Du gav bilden betyget " + yourRating + " av 5! \nGenomsnitt: " + ratingAverage;

@@ -92,8 +92,8 @@ class picturesTemplate {
                 }),
             Object.create(prototypePicture,
                 {
-                    id: { value: uniqueIdImages() },
-                    title: { value: "History of Hubble Space Telescope (HST)", writable: true, enumerable: true },
+                    id: { value: uniqueIdImages(), writable: true, enumerable: true },
+                    title: { value: "Inspection of the Hubble Space Telescope (HST)", writable: true, enumerable: true },
                     comment: {
                         value: "The Hubble Space Telescope (HST) pictured in the Vertical Processing Facility (VPF) support fixture " +
                             "during final testing and verification at the Lockheed assembly plant."
@@ -158,19 +158,6 @@ class picturesTemplate {
             Object.create(prototypePicture,
                 {
                     id: { value: uniqueIdImages(), writable: true, enumerable: true },
-                    title: { value: "Hubble Takes Mars Portrait Near Close Approach", writable: true, enumerable: true },
-                    comment: {
-                        value: "Mars is looking mighty fine in this portrait nabbed by the Hubble Space Telescope on a near close approach. " +
-                            "The Hubble Space Telescope is more well known for its picturesque views of nebulae and galaxies, " +
-                            "but it's also useful for studying our own planets, including Mars."
-                        , writable: true, enumerable: true
-                    },
-                    imgLoRes: { value: "GSFC_20171208_Archive_e000332~small.jpg", writable: true, enumerable: true },
-                    // imgHiRes: { value: "GSFC_20171208_Archive_e000332~orig.jpg", writable: true, enumerable: true }
-                }),
-            Object.create(prototypePicture,
-                {
-                    id: { value: uniqueIdImages(), writable: true, enumerable: true },
                     title: { value: "Hubble Observes a New Saturn Storm", writable: true, enumerable: true },
                     comment: {
                         value: "Hubble Observes a New Saturn Storm", writable: true, enumerable: true
@@ -190,7 +177,7 @@ class picturesTemplate {
                         value: "NASA image release August 5, 2010 A beautiful new image of two colliding galaxies has been released by NASA's Great Observatories."
                         , writable: true, enumerable: true
                     },
-                    imgLoRes: { value: "A Galactic Spectacle_4862916839_o~orig.jpg", writable: true, enumerable: true },
+                    imgLoRes: { value: "A%20Galactic%20Spectacle_4862916839_o~small.jpg", writable: true, enumerable: true },
                     // imgHiRes: { value: "A Galactic Spectacle_4862916839_o~orig.jpg", writable: true, enumerable: true }
                 }),
             Object.create(prototypePicture,

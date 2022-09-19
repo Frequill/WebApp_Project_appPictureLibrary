@@ -101,7 +101,7 @@
                     "id": "picture13",
                     "title": "A Galactic Spectacle",
                     "comment": "NASA image release August 5, 2010 A beautiful new image of two colliding galaxies has been released by NASA's Great Observatories.",
-                    "imgLoRes": "A Galactic Spectacle_4862916839_o~orig.jpg"
+                    "imgLoRes": "A%20Galactic%20Spectacle_4862916839_o~small.jpg"
                 },
                 {
                     "id": "picture14",
@@ -150,12 +150,6 @@
                 },
                 {
                     "id": "picture20",
-                    "title": "Hubble Takes Mars Portrait Near Close Approach",
-                    "comment": "Mars is looking mighty fine in this portrait nabbed by the Hubble Space Telescope on a near close approach. The Hubble Space Telescope is more well known for its picturesque views of nebulae and galaxies, but it's also useful for studying our own planets, including Mars.",
-                    "imgLoRes": "GSFC_20171208_Archive_e000332~small.jpg"
-                },
-                {
-                    "id": "picture21",
                     "title": "Hubble Observes a New Saturn Storm",
                     "comment": "Hubble Observes a New Saturn Storm",
                     "imgLoRes": "PIA05982~small.jpg"
@@ -170,24 +164,25 @@
             "headerImage": "app-data/library/pictures/album-header/GSFC_20171208_Archive_e002151~small.jpg",
             "pictures": [
                 {
-                    "id": "picture22",
+                    "id": "picture21",
                     "title": "History of Hubble Space Telescope (HST)",
                     "comment": "Ready for transportation to the Kennedy Space Center, the Hubble Space Telescope (HST) is pictured onboard the strongback dolly at the Vertical Processing Facility (VPF) at the Lockheed assembly plant upon completion of final testing and verification.",
                     "imgLoRes": "8913467~small.jpg"
                 },
                 {
-                    "title": "History of Hubble Space Telescope (HST)",
+                    "id": "picture22",
+                    "title": "Inspection of the Hubble Space Telescope (HST)",
                     "comment": "The Hubble Space Telescope (HST) pictured in the Vertical Processing Facility (VPF) support fixture during final testing and verification at the Lockheed assembly plant.",
                     "imgLoRes": "8913468~small.jpg"
                 },
                 {
-                    "id": "picture24",
+                    "id": "picture23",
                     "title": "Hubble Space Telescope",
                     "comment": "The Hubble Space Telescope in a picture snapped by a Servicing Mission 4 crewmember just after the Space Shuttle Atlantis captured Hubble with its robotic arm on May 13, 2009, beginning the mission to upgrade and repair the telescope. ",
                     "imgLoRes": "GSFC_20171208_Archive_e002151~small.jpg"
                 },
                 {
-                    "id": "picture25",
+                    "id": "picture24",
                     "title": "Making Room for Hubble's New Camera",
                     "comment": "Astronaut Jeffrey Hoffman removes the Wide Field and Planetary Camera 1 (WFPC 1) during the first Hubble servicing mission (SM1), which took place in December, 1993",
                     "imgLoRes": "PIA22574~small.jpg"
