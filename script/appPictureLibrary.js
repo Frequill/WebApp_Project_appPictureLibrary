@@ -74,23 +74,18 @@ window.onload = function () {
 
 // ***************************************** imageSelected.html *****************************************
 window.addEventListener('load', (event) => {
+  console.log("Här är picture1Comment: " + localStorage.getItem("picture1Comment"));
+  console.log("Såhär ser denna bilds localStorage + comment ut: " + localStorage.getItem(localStorage.getItem("pictureId") + "Comment"));
+  console.log("Såhär ser denna bilds localStorage + title ut: " + localStorage.getItem(localStorage.getItem("pictureId") + "Title"));
 
-  // TEST
-  if (localStorage.getItem(localStorage.getItem("pictureId" + "Comment")) != "" || localStorage.getItem(localStorage.getItem("pictureId" + "Comment")) != undefined) {
-
-    let commentField = document.getElementById("comments-display-field");
-    commentField.innerHTML = localStorage.getItem(localStorage.getItem("pictureId" + "Comment"));
-    console.log("Här är commentField i localStorage: " + JSON.stringify(commentField));
+  // Two if-cases check if user has saved a custom title or comment for the image in question. IF-there-are-saved-texts THEN load those custom texts and display them
+  if (localStorage.getItem(localStorage.getItem("pictureId") + "Comment")) {
+    document.getElementById("comments-display-field").innerText = localStorage.getItem(localStorage.getItem("pictureId") + "Comment");
   }
 
-  if (localStorage.getItem(localStorage.getItem("pictureId" + "Title")) != "" || localStorage.getItem(localStorage.getItem("pictureId" + "Title")) != undefined) {
-
-    let imgTitle = document.getElementById("bild-titel");
-    imgTitle.innerHTML = localStorage.getItem(localStorage.getItem("pictureId" + "Title"));
-    console.log("Här är imgTitle i localStorage: " + JSON.stringify(imgTitle));
-    // console.log("Här är imgTitle i localStorage: " + JSON.parse(imgTitle));
+  if (localStorage.getItem(localStorage.getItem("pictureId") + "Title")) {
+    document.getElementById("bild-titel").innerText = localStorage.getItem(localStorage.getItem("pictureId") + "Title");
   }
-  //TEST
 
   console.log('page is fully loaded');
   let imageTitle = document.getElementById("bild-titel");
@@ -105,23 +100,20 @@ window.addEventListener('load', (event) => {
       console.log(data); // "data" är alltså våran feta JSON array! (picture-library.json)
       console.log("Här är pictures!: " + JSON.stringify(data.albums[0].pictures))  // På såhär vis kan man printa samtliga bilder från JSON arrayen (index 0)! (Bygg vidare på detta)
 
-      // Med for-loop eller liknande för att printa/hämta alla bilder i hela arrayen
       for (let i = 0; i < data.albums.length; i++) {
         console.log("Här borde det stå 4 eller 5: " + data.albums.length); // DENNA FUNGERAR, VI HITTAR ALLA INDEX!
         for (let j = 0; j < data.albums[i].pictures.length; j++) {
-          // console.log("localStorage.getItem(\"pictureId\"): " + localStorage.getItem("pictureId"));
-          // console.log('data.albums[i].pictures[j].id: ' + data.albums[i].pictures[j].id);
-          // console.log('imageTitle.innerText: ' + imageTitle.innerText);
           if (data.albums[i].pictures[j].id == localStorage.getItem("pictureId")) {
-            // console.log("Julius bullshit: " + data.albums[i].pictures[j].title)
-            imageTitle.innerText = data.albums[i].pictures[j].title;
-
             image.style.backgroundImage = "url(/" + data.albums[i].path + '/' + data.albums[i].pictures[j].imgLoRes + `)`; // vi hade glömt ett + efter imgLoRes
 
-            imageDescription.innerText = data.albums[i].pictures[j].comment; // för att få fram beskrivning
-            // console.log(`data.albums[i].path + data.albums[i].pictures[j].imgLoRes: ` + '/' + data.albums[i].path + '/' + data.albums[i].pictures[j].imgLoRes);
-            // console.log(`image.url: ` + image.url);
-            // console.log('url', '/' + data.albums[i].path + '/' + data.albums[i].pictures[j].imgLoRes);
+            // These two if-cases check if there are no "custom" (user-made) titles or descriptions for images in the library. If there are NO custom texts, load in the default ones
+            if (!localStorage.getItem(localStorage.getItem("pictureId") + "Title")) {
+              imageTitle.innerText = data.albums[i].pictures[j].title;
+            } 
+            
+            if (!localStorage.getItem(localStorage.getItem("pictureId") + "Comment")) {
+            imageDescription.innerText = data.albums[i].pictures[j].comment;
+            }
           }
         }
       }
@@ -134,10 +126,13 @@ window.addEventListener('load', (event) => {
     let commentField = document.getElementById("comments-display-field");
 
     // TEST
-    localStorage.setItem(localStorage.getItem("pictureId") + "Comment", newComment); // (pucture1Comment, *det du skrev som ny kommentar*)
+    localStorage.setItem(localStorage.getItem("pictureId") + "Comment", newComment); // (picture1Comment, *det du skrev som ny kommentar*)
+    console.log("Här är picture1Comment: " + localStorage.getItem("picture1Comment")); // Använd "picture1" som test bild!  ---  DEN HÄR FUNGERAR, Sparas i localStorage! 
     // TEST
 
     commentField.innerHTML = newComment;
+    console.log(commentField);
+    console.log(commentField.innerHTML)
   }
 
   function changeImgTitle() {
@@ -157,7 +152,7 @@ window.addEventListener('load', (event) => {
 
   // Functions and eventListiners for changing the rating an image
   // *************************************************************
-  // (Annoying BS bug was fixed by having five separate methods instead of a single method (javaScript is dumb, I'm NOT the problem) )
+  // (Annoying BS bug was fixed by having five separate methods instead of a single method (javaScript is dumb, I'm NOT the problem))
   let yourRating = 0;
   let ratingsTotal = 0;
   let ratingCounter = 0;
