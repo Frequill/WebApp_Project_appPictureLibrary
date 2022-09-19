@@ -6,11 +6,13 @@ body {
   padding: 0px;
   font-family: 'Oswald', sans-serif;
   color: #ebebeb;
-  background-color: rgb(112, 112, 112);
+  background: rgb(2, 0, 36);
+  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 50%, rgba(0, 212, 255, 1) 100%);
 }
 
 .FlexWrapper {
-  background-color: rgb(112, 112, 112);
+  background: rgb(2, 0, 36);
+  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 50%, rgba(0, 212, 255, 1) 100%);
   font-family: 'Oswald', sans-serif;
   height: 98vh;
   width: 100vw;
@@ -68,7 +70,8 @@ body {
 }
 
 .FlexFooter {
-  background-color: steelblue;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 50%, rgba(0, 212, 255, 1) 100%);
   min-height: 13.6%;
   text-align: center;
   display: flex;
