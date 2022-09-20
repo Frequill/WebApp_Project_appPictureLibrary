@@ -48,7 +48,7 @@ function renderImage(src, tag) {
   imgFlex.appendChild(div);
 };
 
-// ********************************************* CLICK FUNCTIONALITY TO IMAGES ? *********************************************
+// ******************************** CLICK FUNCTIONALITY TO IMAGES **************************************
 
 function imageClick() {
   localStorage.setItem("pictureId", this.getAttribute('id'));
@@ -57,7 +57,6 @@ function imageClick() {
 }
 
 window.onload = function () {
-  // ACTION-LISTENER-LOOP     THIS WORKS! Adds actionListiners to all images 
   let counterPic = 1;
   for (const album of library.albums) {
     let amountOfPics = album.pictures.length;
@@ -112,17 +111,19 @@ window.addEventListener('load', (event) => {
             // These two if-cases check if there are no "custom" (user-made) titles or descriptions for images in the library. If there are NO custom texts, load in the default ones
             if (!localStorage.getItem(localStorage.getItem("pictureId") + "Title")) {
               imageTitle.innerText = data.albums[i].pictures[j].title;
-            } 
-            
+            }
+
             if (!localStorage.getItem(localStorage.getItem("pictureId") + "Comment")) {
-            imageDescription.innerText = data.albums[i].pictures[j].comment;
+              imageDescription.innerText = data.albums[i].pictures[j].comment;
             }
           }
         }
       }
     });
+  // *************************************************************************************************
 
-  // ******************************************************************************
+
+  // *************************************************************************************************
   // Functions and eventListiners for changing the comment and/or title of an image
   function changeImgComment() {
     let newComment = document.getElementById("comment-field-text").value;
@@ -130,7 +131,7 @@ window.addEventListener('load', (event) => {
 
     localStorage.setItem(localStorage.getItem("pictureId") + "Comment", newComment); // (picture1Comment, *det du skrev som ny kommentar*)
     console.log("Här är picture1Comment: " + localStorage.getItem("picture1Comment")); // Använd "picture1" som test bild!  ---  DEN HÄR FUNGERAR, Sparas i localStorage! 
-    
+
     commentField.innerHTML = newComment;
     console.log(commentField);
     console.log(commentField.innerHTML)
@@ -158,7 +159,7 @@ window.addEventListener('load', (event) => {
   let ratingAverage;
 
   // This IF-statement ensures that average rating of an UNRATED image starts at 0 (zero), while a previously rated image loads the last avrage rating!
-  if (localStorage.getItem(localStorage.getItem("pictureId") + "avgRating")){
+  if (localStorage.getItem(localStorage.getItem("pictureId") + "avgRating")) {
     ratingsTotal = parseInt(localStorage.getItem(localStorage.getItem("pictureId") + "totalRatings")); // This needed to be parsed back to an INT in order to not bug out
     ratingCounter = localStorage.getItem(localStorage.getItem("pictureId") + "rateCount");
     ratingAverage = localStorage.getItem(localStorage.getItem("pictureId") + "avgRating");
@@ -171,10 +172,10 @@ window.addEventListener('load', (event) => {
 
   console.log("Average rating of this image is: " + ratingAverage);
   console.log("This image has been rated: " + ratingCounter + " times");
-  console.log("ratingsTotal: " + ratingsTotal);  
+  console.log("ratingsTotal: " + ratingsTotal);
 
   function rateImg1() {
-    console.log("I början av metoden är ratingsTotal: " + ratingsTotal);  
+    console.log("I början av metoden är ratingsTotal: " + ratingsTotal);
 
     console.log("NU HAR DU TRYCKT PÅ EN STJÄRNA :)");
     yourRating = 1;
@@ -182,19 +183,19 @@ window.addEventListener('load', (event) => {
     ratingCounter++;
     ratingAverage = ratingsTotal / ratingCounter;
 
-    console.log("När vi sparar ratingsTotal i localStorage ser den ut såhär: " + ratingsTotal); 
+    console.log("När vi sparar ratingsTotal i localStorage ser den ut såhär: " + ratingsTotal);
 
     localStorage.setItem(localStorage.getItem("pictureId") + "totalRatings", ratingsTotal);
     localStorage.setItem(localStorage.getItem("pictureId") + "rateCount", ratingCounter);
     localStorage.setItem(localStorage.getItem("pictureId") + "avgRating", ratingAverage);
-    
+
     let ratingVar = document.getElementById("rating-display");
     ratingVar.innerText = "Du gav bilden betyget " + yourRating + " av 5! \nGenomsnitt: " + ratingAverage;
 
     console.log("Din rating blev: " + yourRating);
     console.log("Här är ratingVar: " + ratingVar);
 
-    console.log("I slutet av metoden är ratingsTotal: " + ratingsTotal); 
+    console.log("I slutet av metoden är ratingsTotal: " + ratingsTotal);
   }
 
   function rateImg2() {

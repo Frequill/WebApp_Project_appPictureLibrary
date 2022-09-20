@@ -10,16 +10,46 @@
 </head>
 
 <body id="full-body">
-    <!-- <p id="greetingLabel"> Välkommen till grupp Filifjonkans fotoalbum! </br> WORK IN PROGRESS... </p> -->
     </br> <!-- This is how to make an HTML LINE BREAK! -->
     <nav class="nav-flex-container">
         <title class="greetingLabel">Astronomi - Ett Visuellt Äventyr!</title>
-        <!-- <a class="navBar" href="landingPage.html">Hem</a> -->
-        <a class="navBar" href="index.html">Foto Album</a>  
-        <a class="navBar" href="#contact">Kontakt</a>
-        <a class="navBar" href="#about">Om oss</a>
+        <a class="navBar" href="index.html">Foto Album</a>
+        <a class="navBar" id="contactButton" href="#contact">Kontakt</a>
+        <a class="navBar" id="aboutButton" href="#about">Om oss</a>
     </nav>
-    <!-- <p id="albumButton" ><a href="index.html">Go to photo album</a></p> -->
+
+    <!-- The Modal -->
+    <div id="contact-modal-id" class="contact-modal-class">
+
+        <!-- Modal content -->
+        <div class="contact-modal-content">
+            <span class="close">&times;</span>
+            <h2>Kontakt:</h2>
+            <p>Har du frågor, funderingar eller ytterligare observationer gällande det visuella biblioteket? </br> Då är
+                du mycket välkommen att kontakta oss via: </br> </br> don'tmailhere.wedon'tcare@mail.se </br> </br> </br> Tack för ditt besök - Välkommen åter!</p>
+        </div>
+
+    </div>
+
+    <div id="about-modal-id" class="about-modal-class">
+
+        <!-- Modal content -->
+        <div class="about-modal-content">
+            <span class="close">&times;</span>
+            <h2>Om oss:</h2>
+                    <p>Vi är ett superhemligt astronomiskt sällskap någonstans i närheten av källarutrymmena och
+                        tunnlarna under Newtons utbildningslokaler.
+                        Vi har beskrivits av andra som en fanatisk himla-kroppsdyrkande sekt, 
+                        men vi identifierar oss mer som lajvande cosplay hobby-astronauter som inte lyckats bryta oss ut ur 
+                        gravitationskraftens eviga förtryck.
+                    </p>
+                </h2>
+        </div>
+
+    </div>
+
+
+    <script type="module" src="./script/landingPage.js"></script>
 </body>
 
 </html>

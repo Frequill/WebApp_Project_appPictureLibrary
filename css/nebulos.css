@@ -4,8 +4,8 @@ body {
   padding: 2px;
   font-family: Copperplate, Fantasy, monospace, 'Oswald', sans-serif;
   color: #ebebeb;
-  background: rgb(1, 66, 27);
-  background: linear-gradient(90deg, rgba(1, 66, 27, 1) 0%, rgba(0, 195, 22, 1) 100%);
+  background: rgb(212, 58, 2);
+  background: linear-gradient(90deg, rgba(212, 58, 2, 1) 0%, rgba(69, 40, 0, 1) 100%);
 }
 
 .FlexWrapper {
@@ -75,6 +75,13 @@ body {
 #nebulos-header-image img {
   background: greenyellow;
   box-shadow: 0 0 100px greenyellow;
+}
+
+.slideshow-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 5%;
 }
 
 div img {
