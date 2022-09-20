@@ -28,13 +28,19 @@ body {
   max-height: 0%;
 }
 
+.flex-parent-element {
+  max-height: 10%;
+  display: flex;
+  width: 100%;
+}
+
 #back-button {
   border-width: 2rem;
   border-radius: 15rem;
   background-color: orange;
   color: purple;
   text-align: center;
-  width: 50px;
+  width: 80px;
   padding-bottom: 35px;
 }
 
