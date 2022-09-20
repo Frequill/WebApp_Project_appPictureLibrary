@@ -7,12 +7,20 @@ let slideShowHubble = document.getElementById("slideshow");                 // f
 
 /* ----------------------------------- SLIDESHOW ---------------------------------------- */
 
+// JULIUS TEST
 let startPoint = 0
 let images = [];
 let time = 2000;
 
-window.onload = function () {
+let imgPicked = {};
+imgPicked[0] = true;
+imgPicked[1] = true;
+imgPicked[2] = true;
 
+let isPlayingSlideShow = false;
+
+window.onload = function () {
+    document.querySelector('#slideshow-galaxies-stop').disabled = true;
 
 
     console.log("picsFromPlanetsAlbum: " + picsFromPlanetsAlbum);
@@ -26,11 +34,17 @@ window.onload = function () {
             console.log(data.albums[3].pictures.length);
             console.log("data: " + data);
             for (let i = 0; i < data.albums[3].pictures.length; i++) {
-                picsFromPlanetsAlbum.innerHTML += (`<img src="` + data.albums[3].path + `/` + data.albums[3].pictures[i].imgLoRes + `">`);
+                picsFromPlanetsAlbum.innerHTML += (`<img src="` + data.albums[3].path + `/` + data.albums[3].pictures[i].imgLoRes + `" id='imgId` + i + "'>");
+
+                /*
+                if(imgPicked[i] == true){
                 images[i] = data.albums[3].path + `/` + data.albums[3].pictures[i].imgLoRes;        // For the slideshow
+                }
+                */
             }
             headerImagePlanetsAlbum.innerHTML += (`<img src="../app-data/library/pictures/album-header/hubble-captures-vivid-auroras-in-jupiters-atmosphere_28000029525_o~small.jpg">`);
 
+            /*
             setInterval(function () {
                 for (let j = 0; j < 11; j++) {
 
@@ -46,7 +60,122 @@ window.onload = function () {
                     console.log("slideShowHubble.src: " + slideShowHubble.src);
                 }
             }, time);
+            */
+
+
+
+            console.log("Utanför fetchen, efter rad '62'!");
+
+
+            function playSlideShow() {
+                document.querySelector('#slideshow-galaxies-show').disabled = true;
+                document.querySelector('#slideshow-galaxies-stop').disabled = false;
+
+                console.log("Du klickade på spela slideshow! :)")
+
+                isPlayingSlideShow = true;
+
+                for (let i = 0; i < data.albums[3].pictures.length; i++) {
+                    if (imgPicked[i] == true) {
+                        images[i] = data.albums[3].path + `/` + data.albums[3].pictures[i].imgLoRes;        // For the slideshow
+                    };
+                }
+
+
+                let myInterval = setInterval(function () {
+                    for (let j = 0; j < images.length; j++) {
+                        slideShowHubble.setAttribute("src", images[startPoint]);
+                        console.log("DEN HÄR LOOPEN ÄR OÄNDLIG: slideShowHubble.src: " + slideShowHubble.src);
+
+                        if (startPoint < images.length - 1) {
+                            startPoint++;
+                        } else {
+                            startPoint = 0;
+                        }
+                        // sleep
+                        console.log("DEN OÄNDLIGA LOGGEN: slideShowHubble.src: " + slideShowHubble.src);
+                    }
+                    clearInterval(myInterval);
+                }, time);
+
+                myInterval;
+            }
+
+            function stopSlideShow() {
+                document.querySelector('#slideshow-galaxies-show').disabled = false;
+                document.querySelector('#slideshow-galaxies-stop').disabled = true;
+
+                // HÄR VILL VI ATT SLIDESHOWEN SKA SLUTA!
+            }
+
+
+            function clickImg1() {
+                console.log("Klickade på image nr: 1!");
+                imgPicked[0] = true;
+            }
+
+            function clickImg2() {
+                imgPicked[1] = true;
+                console.log("Klickade på image nr: 2!");
+            }
+
+            function clickImg3() {
+                imgPicked[2] = true;
+                console.log("Klickade på image nr: 3!");
+            }
+
+            document.getElementById("imgId0").addEventListener("click", clickImg1)
+            document.getElementById("imgId1").addEventListener("click", clickImg2)
+            document.getElementById("imgId2").addEventListener("click", clickImg3)
+            document.getElementById("slideshow-galaxies-show").addEventListener("click", playSlideShow);
+            document.getElementById("slideshow-galaxies-stop").addEventListener("click", stopSlideShow);
+
         });
+    // JULIUS TEST
+
+
+    /*
+    let startPoint = 0
+    let images = [];
+    let time = 2000;
+    
+    window.onload = function () {
+    
+    
+    
+        console.log("picsFromPlanetsAlbum: " + picsFromPlanetsAlbum);
+    
+        fetch("../app-data/library/picture-library.json")
+            .then(function (resp) {
+                return resp.json();
+            })
+            .then(function (data) {
+                console.log(data);
+                console.log(data.albums[3].pictures.length);
+                console.log("data: " + data);
+                for (let i = 0; i < data.albums[3].pictures.length; i++) {
+                    picsFromPlanetsAlbum.innerHTML += (`<img src="` + data.albums[3].path + `/` + data.albums[3].pictures[i].imgLoRes + `">`);
+                    images[i] = data.albums[3].path + `/` + data.albums[3].pictures[i].imgLoRes;        // For the slideshow
+                }
+                headerImagePlanetsAlbum.innerHTML += (`<img src="../app-data/library/pictures/album-header/hubble-captures-vivid-auroras-in-jupiters-atmosphere_28000029525_o~small.jpg">`);
+    
+                setInterval(function () {
+                    for (let j = 0; j < 11; j++) {
+    
+                        slideShowHubble.setAttribute("src", images[startPoint]);
+                        console.log("slideShowHubble.src: " + slideShowHubble.src);
+    
+                        if (startPoint < images.length - 1) {
+                            startPoint++;
+                        } else {
+                            startPoint = 0;
+                        }
+                        // sleep
+                        console.log("slideShowHubble.src: " + slideShowHubble.src);
+                    }
+                }, time);
+            });
+            */
 
     // -----------------------------TEST FÖR IMAGE CLICK FUNCTIONALITY----------------------------------------
 
