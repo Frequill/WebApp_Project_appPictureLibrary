@@ -6,7 +6,7 @@ body {
   font-size: 20px;
   color: #ebebeb;
   background: rgb(131,58,180);
-background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(32,30,28,1) 100%);
+  background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(32,30,28,1) 100%);
 }
 
 .FlexWrapper {
@@ -52,6 +52,7 @@ background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(32,30,28,1) 100%)
   text-shadow: 0 0 10px #ffffff;
   cursor: pointer;
   transform: scale(1.1);
+  box-shadow: 0px 0px 100px 0px rgb(255, 194, 80);
 }
 
 #bild-titel {

@@ -112,6 +112,7 @@ window.onload = function () {
             function clickImg1() {
                 console.log("Klickade på image nr: 1!");
                 imgPicked[0] = true;
+                //document.getElementById("imgId0").style.boxShadow = "0px 0px 100px 0px rgb(255, 194, 80)"; HÄR VILL PATRIK LEKA MED SAKER 21/9 PUSS
             }
 
             function clickImg2() {

@@ -25,7 +25,7 @@ body {
 }
 
 .FlexItem {
-  width: 200px;
+  width: 250px;
 
   /* fixed size will demonstrate the wrap */
 }
@@ -45,8 +45,6 @@ img {
   align-items: center;
   /* position: fixed; */
 }
-
-.side-nav-bar {}
 
 .navBar {
   font-family: Copperplate, Fantasy, monospace;
@@ -76,7 +74,8 @@ img {
 .FlexItem:hover {
   transition: 0.2s;
   transform: scale(1.3);
-  cursor: pointer;
+  cursor: pointer;;
+  box-shadow: 0px 0px 100px 0px rgba(255,165,0,1);
 }
 
 
@@ -85,6 +84,8 @@ img {
   text-decoration: underline;
   background-color: rgb(255, 194, 80);
   transform: scale(1.2);
+  box-shadow: 0px 0px 100px 0px rgb(255, 194, 80);
+
 
 }
 
@@ -93,6 +94,7 @@ img {
   text-decoration: underline;
   background-color: rgb(255, 194, 80);
   transform: scale(1.05);
+  box-shadow: 0px 0px 100px 0px rgb(255, 194, 80);
 
 }
 
