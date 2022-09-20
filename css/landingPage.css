@@ -79,17 +79,32 @@
     transform: translate(-50%, -50%)
 }
 
+h2 {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* ------------------------- MODAL (Skånsk dialekt) --------------------------*/
 
 /* The Modal (background) */
-.contact-modal-class, .about-modal-class {
+.contact-modal-class,
+.about-modal-class {
     display: none;
     /* Hidden by default */
     position: fixed;
     /* Stay in place */
     z-index: 1;
     /* Sit on top */
-    padding-top: 20%;
+    padding-top: 15%;
     /* Location of the box */
     left: 0;
     top: 0;
@@ -106,12 +121,19 @@
 }
 
 /* Modal Content */
-.contact-modal-content, .about-modal-content{
-    background-color: #fefefe;
+.contact-modal-content,
+.about-modal-content {
+    background: rgb(223, 221, 252);
+    background: linear-gradient(90deg, rgba(223, 221, 252, 1) 0%, rgba(147, 255, 154, 1) 50%, rgba(0, 212, 255, 1) 100%);
     margin: auto;
     padding: 20px;
     border: 2px solid #888;
     width: 50%;
+
+    /* border glow*/
+    background-color: #fff;
+    box-shadow: 0 0 60px 30px #fff, 0 0 100px 60px #b400ff, 0 0 140px 90px #ff00d4;
+    /* border glow */
 }
 
 /* The Close Button */
