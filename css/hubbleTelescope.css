@@ -8,6 +8,11 @@ body {
   background: rgb(131,58,180);
 background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(32,30,28,1) 100%);
 }
+
+a {
+  text-decoration: none;
+}
+
 .FlexWrapper {
   height: 98vh;
   width: 100vw;
