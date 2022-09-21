@@ -5,8 +5,8 @@ body {
   font-family: Copperplate, Fantasy, monospace, 'Oswald', sans-serif;
   font-size: 20px;
   color: #ebebeb;
-  background: rgb(131,58,180);
-  background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(32,30,28,1) 100%);
+  background: rgb(131, 58, 180);
+  background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(32, 30, 28, 1) 100%);
 }
 
 .FlexWrapper {
@@ -88,6 +88,7 @@ div img {
   max-width: 90%;
   max-height: 90%;
 }
+
 #HubbleTelescope-header-image img {
   background: greenyellow;
   box-shadow: 0 0 100px greenyellow;
@@ -98,13 +99,61 @@ div img {
   align-items: center;
   justify-content: center;
   padding-top: 5%;
+  font-family: Copperplate, Fantasy, monospace, 'Oswald', sans-serif;
+}
+
+button {
+  font-family: monospace, 'Oswald', sans-serif;
+  font-weight: bolder;
+  width: 100px;
+  height: 100px;
 }
 
 #slideshow {
   background: rgb(56, 1, 8);
   box-shadow: 0 0 100px rgb(185, 0, 139);
+  visibility: hidden;
+}
+
+.slideshow-modal-class {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+} 
+
+.slideshow-modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .footer {
   min-height: 100%;
+}
+
+#slideshow-instructions {
+  text-align: center;
 }

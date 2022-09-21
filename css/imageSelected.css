@@ -34,7 +34,7 @@ body {
 }
 
 .FlexContent {
-  background-image: url("/app-data/library/pictures/imgPlaceholder/f43cc-16613253513521-1920.jpeg");
+  /* background-image: url("/app-data/library/pictures/imgPlaceholder/f43cc-16613253513521-1920.jpeg"); */
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
