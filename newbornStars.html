@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/newbornStars.css" />
-    <title>Nyfödda-stjärnor</title>
+    <title>Nyfödda stjärnor</title>
 </head>
 
 <body>
@@ -21,26 +21,40 @@
                 Nyfödda stjärnor
             </header>
         </div>
-        <div id="new-born-stars-header-image">
+        <div id="newborn-stars-header-image">
             <!--
                 Här inne bör header image för albumet nebulos placeras
             -->
         </div>
 
-        <div id="pics-from-newbornStars-album-div">
+        <div id="slideshow-instructions">
+            <p>
+                För slideshow: klicka på bilderna nedan och scrolla längst ner
+            </p>
+            <img src="https://cdn-icons-png.flaticon.com/512/608/608258.png" width="50px" height="50px">
+        </div>
 
+        <div id="pics-from-newborn-stars-album-div">
             <!--
-            Här inne bör bilderna från albumet new born stars placeras
+            Här inne bör bilderna från albumet planets placeras
         -->
         </div>
         <div class="slideshow-buttons">
-            <button id="slideshow-galaxies">Välj bilder till Slideshow</button>
             <button id="slideshow-galaxies-show">Visa Slideshow</button>
+            <!-- <button id="slideshow-galaxies-stop">Avbryt slideshow</button>  -->
         </div>
 
-        <div class="footer">
+    <div id= "slideshow-modal-id" class="slideshow-modal-class">
+
+        <div id= "slideshow-modal-content" class="slideshow-modal-content">
+           <!-- <span class="close">&times;</span> -->
             <img name="slideshow" class="slideshow" id="slideshow"></img>
+            <!-- <img src="https://cdn-icons-png.flaticon.com/512/608/608258.png"> -->
         </div>
+
+    </div>
+
+
     </main>
 
     <script type="module" src="./script/newbornStars.js"></script>

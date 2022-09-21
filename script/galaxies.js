@@ -4,13 +4,26 @@ import * as lib from '../model/picture-library-browser.js';                 // N
 
 let picsFromGalaxiesAlbum = document.getElementById("pics-from-galaxies-album-div");
 let headerImageGalaxiesAlbum = document.getElementById("galaxies-header-image");
-let slideShowHubble = document.getElementById("slideshow");                 // for slideshow
+let slideShowHubbleContent = document.getElementById("slideshow-modal-content");  // for slideshow
+let slideShowHubbleModal = document.getElementById("slideshow-modal-id");
+let slideShow = document.getElementById("slideshow");              
 
 /* ----------------------------------- SLIDESHOW ---------------------------------------- */
-
-let startPoint = 0
+let startPoint = 1
 let images = [];
 let time = 2000;
+
+// This array represents all images in the album and which ones the user wants to display in a slideshow based on if they are set to true or false... 
+// (false == unclicked, false by default)
+let imgPicked = {};
+imgPicked[0] = false;
+imgPicked[1] = false;
+imgPicked[2] = false;
+imgPicked[3] = false;
+imgPicked[4] = false;
+imgPicked[5] = false;
+
+let myInterval; // Declared the interval variable here so it is accessable
 
 window.onload = function () {
 
@@ -22,100 +35,134 @@ window.onload = function () {
             return resp.json();
         })
         .then(function (data) {
-            console.log(data);
-            console.log(data.albums[0].pictures.length);
-            console.log("data: " + data);
             for (let i = 0; i < data.albums[0].pictures.length; i++) {
-
-                // FUNKAR DEN HÄR NEDAN ??
-                picsFromGalaxiesAlbum.innerHTML += (`<img src="` + data.albums[0].path + `/` + data.albums[0].pictures[i].imgLoRes + `" id='` + "picID" + i + `'>`);
-                images[i] = data.albums[0].path + `/` + data.albums[0].pictures[i].imgLoRes;        // For the slideshow
+                picsFromGalaxiesAlbum.innerHTML += (`<img src="` + data.albums[0].path + `/` + data.albums[0].pictures[i].imgLoRes + `" id='imgId` + i + `' class='jsGeneratedAlbumImages'` + '>');
             }
 
-            console.log(`<img src="../app-data/library/pictures/album-header/PIA04921~small.jpg">`);
-            headerImageGalaxiesAlbum.innerHTML += (`<img src="../app-data/library/pictures/album-header/PIA04921~small.jpg">`);
-            setInterval(function () {
-                for (let j = 0; j < 11; j++) {
+            function playSlideShow() {
+            if (imgPicked[0] == false && imgPicked[1] == false && imgPicked[2] == false && imgPicked[3] == false && imgPicked[4] == false && imgPicked[5] == false) {
+                console.log("Välj MINST en bild, dumbass...")
+            } else {
+                document.querySelector('#slideshow-galaxies-show').disabled = true;
 
-                    slideShowHubble.setAttribute("src", images[startPoint]);
-                    console.log("slideShowHubble.src: " + slideShowHubble.src);
+                // ************************************** Place users highlighted images in the 'images' array for slideShow! *****************************************
+
+                let j = 0;  // Separate indexes exist so that placement of image URL's in the 'images' array don't skip over any indexes just because
+                // the index of the 'imgPicked' array is skipped. BASICALLY = If we increment 'i' and skip an index, don't skip over a placement index in 'images
+                for (let i = 0; i < data.albums[0].pictures.length; i++) {
+                    if (imgPicked[i] == true) {
+                        images[j] = data.albums[0].path + `/` + data.albums[0].pictures[i].imgLoRes; // All highlighted images are stored in the 'images' array
+                        console.log("Här är images index " + i + ": " + images[i]);
+                        j++; // 'j' is ONLY incremented if an image URL was placed in the 'images' array. This way no empty indexes will be allowed inside it
+                    };
+                }
+
+                // ************************************** Place users highlighted images in the 'images' array for slideShow! *****************************************
+            
+
+            headerImageGalaxiesAlbum.innerHTML += (`<img src="../app-data/library/pictures/album-header/PIA04921~small.jpg">`);
+
+            slideShow.style.visibility = "visible"; // Shows "slideShow" when we need it, hide it when slideShow is not shown or is cancelled
+            slideShowHubbleModal.style.display = "block";
+            slideShow.setAttribute("src", images[0]); // Start at first img when user presses 'play slideShow'
+
+            myInterval = setInterval(function () {
+                for (let j = 1; j < 2; j++) {
+                    // Loop starts at second index (1) so that the first image in 'images' is displayed by default BEFORE the loop starts at row 70
+                    slideShow.setAttribute("src", images[startPoint]);
+
+                    console.log("slideShow.src: " + slideShow.src);
+                    //console.log("slideShowHubble.src: " + slideShowHubble.src);
+                    console.log("Här är erat J: " + j);
 
                     if (startPoint < images.length - 1) {
                         startPoint++;
                     } else {
-                        startPoint = 0;
+                        startPoint = 0; // STARTPOINT MUST BE SET TO 0 HERE!!!
                     }
-                    // sleep
-                    console.log("slideShowHubble.src: " + slideShowHubble.src);
+                    console.log("slideShowHubble.src: " + slideShow.src);
                 }
             }, time);
-        });
-
-    // -----------------------------TEST FÖR IMAGE CLICK FUNCTIONALITY----------------------------------------
-
-    let library;  //Global varibale, Loaded async from the current server in window.load event
-
-    // library = await lib.pictureLibraryBrowser.fetchJSON(libraryJSON);  //reading library from JSON on local server 
-    library = lib.pictureLibraryBrowser.createFromTemplate();  //generating a library template instead of reading JSON
-
-    function imageClick() {
-        localStorage.setItem("pictureId", this.getAttribute('id'));
-        console.log("imageClick funktionen kör! (Här är den i localStorage): " + JSON.stringify(localStorage.getItem("pictureId")));
-        location.href = 'imageSelected.html'; // Jump to the 'imageSelected' page
-        // ************* HÄR VERKAR DET SOM ATT 'clickedImageID' töms och blir "undefined" igen *************
-    }
-
-    // ACTION-LISTENER-LOOP     THIS WORKS! Adds actionListiners to all images 
-    let counterPic = 1;
-    for (const album of library.albums) {
-        let amountOfPics = album.pictures.length;
-        for (let i = 0; i < amountOfPics + 1; i++) { // vf funkar +1 ????
-            document.getElementById("picture" + counterPic).addEventListener('click', imageClick);
-            counterPic++;
         }
     }
 
-    // ********************************************* index.html *********************************************
-
-    // ***************************************** imageSelected.html *****************************************
-
-    console.log("**************************************************************");
-
-    window.addEventListener('load', (event) => {
-        console.log('page is fully loaded');
-        let imageTitle = document.getElementById("bild-titel");
-        let image = document.getElementById("highlighted-image"); // picture
-        let imageDescription = document.getElementById("comments-display-field"); // description
-
-        fetch("/app-data/library/picture-library.json")
-            .then(function (resp) {
-                return resp.json();
-            })
-            .then(function (data) {
-                console.log(data); // "data" är alltså våran feta JSON array! (picture-library.json)
-                console.log("Här är pictures!: " + JSON.stringify(data.albums[0].pictures))  // På såhär vis kan man printa samtliga bilder från JSON arrayen (index 0)! (Bygg vidare på detta)
-                // Med for-loop eller liknande för att printa/hämta alla bilder i hela arrayen
-
-                for (let i = 0; i < data.albums.length; i++) {
-                    console.log("Här borde det stå 4 eller 5: " + data.albums.length); // DENNA FUNGERAR, VI HITTAR ALLA INDEX!
-                    for (let j = 0; j < data.albums[i].pictures.length; j++) {
-                        // console.log("localStorage.getItem(\"pictureId\"): " + localStorage.getItem("pictureId"));
-                        // console.log('data.albums[i].pictures[j].id: ' + data.albums[i].pictures[j].id);
-                        // console.log('imageTitle.innerText: ' + imageTitle.innerText);
-                        if (data.albums[i].pictures[j].id == localStorage.getItem("pictureId")) {
-                            // console.log("Julius bullshit: " + data.albums[i].pictures[j].title)
-                            imageTitle.innerText = data.albums[i].pictures[j].title;
-
-                            image.style.backgroundImage = "url(/" + data.albums[i].path + '/' + data.albums[i].pictures[j].imgLoRes + `)`; // vi hade glömt ett + efter imgLoRes
-
-                            imageDescription.innerText = data.albums[i].pictures[j].comment; // för att få fram beskrivning
-                            console.log(`data.albums[i].path + data.albums[i].pictures[j].imgLoRes: ` + '/' + data.albums[i].path + '/' + data.albums[i].pictures[j].imgLoRes);
-                            console.log(`image.url: ` + image.url);
-                            console.log('url', '/' + data.albums[i].path + '/' + data.albums[i].pictures[j].imgLoRes);
-                        }
-                    }
+            window.onclick = function (event) {
+                if (event.target == slideShowHubbleModal) {
+                    slideShowHubbleModal.style.display = "none";
+                    document.querySelector('#slideshow-galaxies-show').disabled = false;
+                    clearInterval(myInterval); // With "clearInterval" the interval of displaying new images during the slideShow is stopped
+                    images = []; // Empties array so that it can be re-filled with images per users choice before "Start slideShow" is pressed
                 }
-            });
-    });
-    // -----------------------------TEST FÖR IMAGE CLICK FUNCTIONALITY----------------------------------------
+            }
+
+            function clickImg1() {
+                if (imgPicked[0] == false) {
+                    imgPicked[0] = true;
+                    document.getElementById("imgId0").style.boxShadow = "0px 0px 100px 0px rgb(255, 194, 80)";
+                } else {
+                    imgPicked[0] = false;
+                    document.getElementById("imgId0").style.boxShadow = "none";
+                }
+            }
+
+            function clickImg2() {
+                if (imgPicked[1] == false) {
+                    imgPicked[1] = true;
+                    document.getElementById("imgId1").style.boxShadow = "0px 0px 100px 0px rgb(255, 194, 80)";
+                } else {
+                    imgPicked[1] = false;
+                    document.getElementById("imgId1").style.boxShadow = "none";
+                }
+            }
+
+            function clickImg3() {
+                if (imgPicked[2] == false) {
+                    imgPicked[2] = true;
+                    document.getElementById("imgId2").style.boxShadow = "0px 0px 100px 0px rgb(255, 194, 80)";
+                } else {
+                    imgPicked[2] = false;
+                    document.getElementById("imgId2").style.boxShadow = "none";
+                }
+            }
+
+            function clickImg4() {
+                if (imgPicked[3] == false) {
+                    imgPicked[3] = true;
+                    document.getElementById("imgId3").style.boxShadow = "0px 0px 100px 0px rgb(255, 194, 80)";
+                } else {
+                    imgPicked[3] = false;
+                    document.getElementById("imgId3").style.boxShadow = "none";
+                }
+            }
+
+            function clickImg5() {
+                if (imgPicked[4] == false) {
+                    imgPicked[4] = true;
+                    document.getElementById("imgId4").style.boxShadow = "0px 0px 100px 0px rgb(255, 194, 80)";
+                } else {
+                    imgPicked[4] = false;
+                    document.getElementById("imgId4").style.boxShadow = "none";
+                }
+            }
+
+            function clickImg6() {
+                if (imgPicked[5] == false) {
+                    imgPicked[5] = true;
+                    document.getElementById("imgId5").style.boxShadow = "0px 0px 100px 0px rgb(255, 194, 80)";
+                } else {
+                    imgPicked[5] = false;
+                    document.getElementById("imgId5").style.boxShadow = "none";
+                }
+            }
+
+            // Relevant event listiners:
+            document.getElementById("imgId0").addEventListener("click", clickImg1)
+            document.getElementById("imgId1").addEventListener("click", clickImg2)
+            document.getElementById("imgId2").addEventListener("click", clickImg3)
+            document.getElementById("imgId3").addEventListener("click", clickImg4)
+            document.getElementById("imgId4").addEventListener("click", clickImg5)
+            document.getElementById("imgId5").addEventListener("click", clickImg6)
+            document.getElementById("slideshow-galaxies-show").addEventListener("click", playSlideShow);
+        });
+
 }

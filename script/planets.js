@@ -63,8 +63,6 @@ window.onload = function () {
                     
                     // ************************************** Place users highlighted images in the 'images' array for slideShow! *****************************************
 
-
-                    // myInterval = setInterval(function () {
                     slideShow.style.visibility = "visible"; // Shows "slideShow" when we need it, hide it when slideShow is not shown or is cancelled
                     slideShowHubbleModal.style.display = "block";
                     slideShow.setAttribute("src", images[0]); // Start at first img when user presses 'play slideShow'
