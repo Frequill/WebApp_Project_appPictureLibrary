@@ -76,11 +76,9 @@ a {
   display: block;
   margin-left: 30%;
   margin-right: auto;
-
-  /*position: absolute;*/
 }
 
-#planets-header-image img {
+#newborn-stars-header-image img {
   background: greenyellow;
   box-shadow: 0 0 100px greenyellow;
 }
@@ -95,16 +93,10 @@ div img {
   max-height: 90%;
 }
 
-#HubbleTelescope-header-image img {
-  background: greenyellow;
-  box-shadow: 0 0 100px greenyellow;
-}
-
 .slideshow-buttons {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 5%;
   font-family: Copperplate, Fantasy, monospace, 'Oswald', sans-serif;
 }
 
@@ -149,18 +141,16 @@ button:hover {
 } 
 
 .slideshow-modal-content {
-  /* background-color: #000000; */
-  margin: 1% auto; /* 15% from the top and centered */ 
-  padding: 1%;
-  /* border: 1px solid #888; */
   width: 80%; /* Could be more or less, depending on screen size */
   position: absolute;
   float: left;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-}
+  width: fit-content;
+  block-size: fit-content;
 
+}
 .footer {
   min-height: 100%;
   padding: 10px;

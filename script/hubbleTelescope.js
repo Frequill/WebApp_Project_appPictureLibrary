@@ -46,7 +46,7 @@ window.onload = function () {
             // This function gets all images that user has clicked (based on if images{} indexes are true or false) and then shows them with a two second interval
             function playSlideShow() {
 
-                if (imgPicked[0] == false && imgPicked[1] == false && imgPicked[2] == false) {
+                if (imgPicked[0] == false && imgPicked[1] == false && imgPicked[2] == false && imgPicked[3] == false) {
                     console.log("Välj MINST en bild, dumbass...")
 
                 } else {

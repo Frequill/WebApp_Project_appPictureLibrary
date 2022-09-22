@@ -1,8 +1,8 @@
 'use strict'
 
 import * as lib from '../model/picture-library-browser.js';                 // NEEDED ??
-let picsFromNebulosAlbum = document.getElementById("pics-from-planets-album-div");
-let headerImageNebulosAlbum = document.getElementById("planets-header-image");
+let picsFromNebulosAlbum = document.getElementById("pics-from-nebulos-album-div");
+let headerImageNebulosAlbum = document.getElementById("nebulos-header-image");
 let slideShowHubbleContent = document.getElementById("slideshow-modal-content");
 let slideShowHubbleModal = document.getElementById("slideshow-modal-id");
 let slideShow = document.getElementById("slideshow");
@@ -43,7 +43,7 @@ window.onload = function () {
             // This function gets all images that user has clicked (based on if images{} indexes are true or false) and then shows them with a two second interval
             function playSlideShow() {
 
-                if (imgPicked[0] == false && imgPicked[1] == false && imgPicked[2] == false) {
+                if (imgPicked[0] == false && imgPicked[1] == false && imgPicked[2] == false && imgPicked[3] == false && imgPicked[4] == false && imgPicked[5] == false) {
                     console.log("Välj MINST en bild, dumbass...")
 
                 } else {
@@ -56,7 +56,7 @@ window.onload = function () {
 
                     let j = 0;  // Separate indexes exist so that placement of image URL's in the 'images' array don't skip over any indexes just because
                     // the index of the 'imgPicked' array is skipped. BASICALLY = If we increment 'i' and skip an index, don't skip over a placement index in 'images
-                    for (let i = 0; i < data.albums[3].pictures.length; i++) {
+                    for (let i = 0; i < data.albums[1].pictures.length; i++) {
                         if (imgPicked[i] == true) {
                             images[j] = data.albums[1].path + `/` + data.albums[1].pictures[i].imgLoRes; // All highlighted images are stored in the 'images' array
                             console.log("Här är images index " + i + ": " + images[i]);

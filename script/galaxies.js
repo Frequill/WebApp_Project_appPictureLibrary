@@ -39,6 +39,8 @@ window.onload = function () {
                 picsFromGalaxiesAlbum.innerHTML += (`<img src="` + data.albums[0].path + `/` + data.albums[0].pictures[i].imgLoRes + `" id='imgId` + i + `' class='jsGeneratedAlbumImages'` + '>');
             }
 
+            headerImageGalaxiesAlbum.innerHTML += (`<img src="../app-data/library/pictures/album-header/PIA04921~small.jpg">`);
+
             function playSlideShow() {
             if (imgPicked[0] == false && imgPicked[1] == false && imgPicked[2] == false && imgPicked[3] == false && imgPicked[4] == false && imgPicked[5] == false) {
                 console.log("Välj MINST en bild, dumbass...")
@@ -59,8 +61,6 @@ window.onload = function () {
 
                 // ************************************** Place users highlighted images in the 'images' array for slideShow! *****************************************
             
-
-            headerImageGalaxiesAlbum.innerHTML += (`<img src="../app-data/library/pictures/album-header/PIA04921~small.jpg">`);
 
             slideShow.style.visibility = "visible"; // Shows "slideShow" when we need it, hide it when slideShow is not shown or is cancelled
             slideShowHubbleModal.style.display = "block";

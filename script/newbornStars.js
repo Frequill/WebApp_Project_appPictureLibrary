@@ -34,12 +34,12 @@ window.onload = function () {
                 picsFromNewbornStarsAlbum.innerHTML += (`<img src="` + data.albums[2].path + `/` + data.albums[2].pictures[i].imgLoRes + `" id='imgId` + i + `' class='jsGeneratedAlbumImages'` + '>');
             }
 
-            headerImageNewbornStarsAlbum.innerHTML += (`<img src="../app-data/library/pictures/album-header/A Galactic Spectacle_4862916839_o~small.jpg`);
+            headerImageNewbornStarsAlbum.innerHTML += (`<img src="../app-data/library/pictures/album-header/A Galactic Spectacle_4862916839_o~small.jpg">`);
 
             // This function gets all images that user has clicked (based on if images{} indexes are true or false) and then shows them with a two second interval
             function playSlideShow() {
 
-                if (imgPicked[0] == false && imgPicked[1] == false && imgPicked[2] == false) {
+                if (imgPicked[0] == false && imgPicked[1] == false && imgPicked[2] == false && imgPicked[3] == false && imgPicked[4] == false) {
                     console.log("Välj MINST en bild, dumbass...")
 
                 } else {
