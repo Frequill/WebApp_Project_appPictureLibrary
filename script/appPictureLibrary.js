@@ -106,7 +106,7 @@ window.addEventListener('load', (event) => {
         console.log("Här borde det stå 4 eller 5: " + data.albums.length); // DENNA FUNGERAR, VI HITTAR ALLA INDEX!
         for (let j = 0; j < data.albums[i].pictures.length; j++) {
           if (data.albums[i].pictures[j].id == localStorage.getItem("pictureId")) {
-            image.style.backgroundImage = "url(/" + data.albums[i].path + '/' + data.albums[i].pictures[j].imgLoRes + `)`; // vi hade glömt ett + efter imgLoRes
+            image.style.backgroundImage = "url(/" + data.albums[i].path + '/' + data.albums[i].pictures[j].imgHiRes + `)`; // vi hade glömt ett + efter imgLoRes
 
             // These two if-cases check if there are no "custom" (user-made) titles or descriptions for images in the library. If there are NO custom texts, load in the default ones
             if (!localStorage.getItem(localStorage.getItem("pictureId") + "Title")) {

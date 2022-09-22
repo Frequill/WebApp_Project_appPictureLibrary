@@ -14,6 +14,10 @@ a {
   text-decoration: none;
 }
 
+h1 {
+  font-family:'Oswald', sans-serif;
+}
+
 .FlexWrapper {
   background: rgb(2, 0, 36);
   background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 50%, rgba(0, 212, 255, 1) 100%);
@@ -30,15 +34,11 @@ a {
 }
 
 .FlexHeader {
-  /* border-width: 2rem;
-  border-color: black;
-  text-decoration-color: white; */
-  /* min-height: 5%; */
   max-height: 0%;
 }
 
 .FlexContent {
-  /* background-image: url("/app-data/library/pictures/imgPlaceholder/f43cc-16613253513521-1920.jpeg"); */
+  background-image: url("https://media.istockphoto.com/videos/loading-rectangle-icon-animation-video-id1307371270?s=640x640");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -55,15 +55,12 @@ a {
   text-align: center;
   color: white;
   flex: 0.5 0 auto;
-
   margin-right: 50px;
   margin-bottom: 20px;
   min-height: 50%;
   /*400px;*/
-
   display: inline-block;
   /* I ADDED THIS NOW FOR TEST HIHI REMOVE ME IF PROBLEM PERSISTS! //Julius Thomsen */
-
   background: #8A2387;
   /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #F27121, #E94057, #8A2387);
@@ -90,7 +87,7 @@ a {
   align-items: center;
   justify-content: flex-start;
   align-content: space-between;
-  width: 50%;
+  width: 25%;
 }
 
 #back-button {
@@ -114,19 +111,18 @@ a {
 
 #bild-titel {
   padding-bottom: 35px;
-  border: 2px;
+  font-size: larger;
+  /* border: 2px;
   border-color: black;
-  border-radius: 25rem;
-  border-style: solid;
-  background-color: white;
-  color: black;
+  border-radius: 25rem; */
+  /* background-color: white; */
+  color: white;
+  /* border-style: solid; */
   max-width: 25%;
-  min-height: 12%;
-  margin-left: 19%;
-  margin-top: 21px;
+  margin-left: 16%;
+  margin-top: 1px;
   text-align: center;
   display: inline-block;
-  /* position: absolute; */
 }
 
 #comments-display-field {
@@ -152,20 +148,23 @@ a {
   display: inline-block;
 }
 
-
-
 /* 
-Credit goes to https://codepen.io/knyttneve/pen/EBNqPN
+Credit goes to https://codepen.io/knyttneve/pen/EBNqPN below
 */
 
 .rating {
   display: flex;
   width: 100%;
   justify-content: center;
-  overflow: hidden;
+  /* overflow: hidden; */
   flex-direction: row-reverse;
   height: 50px;
-  position: relative;
+  /*position: relative; */
+}
+
+#rating-display {
+  font-family: Copperplate, Fantasy, monospace, 'Oswald', sans-serif;
+  font-size: larger;
 }
 
 .rating>input {
@@ -200,7 +199,7 @@ Credit goes to https://codepen.io/knyttneve/pen/EBNqPN
 
 #comment-edit-button {
   align-items: center;
-  background-color: rgb(9, 184, 82);
+  background-color: rgb(21, 108, 240);
   border: 2px solid #06f;
   box-sizing: border-box;
   color: #fff;
@@ -226,11 +225,11 @@ Credit goes to https://codepen.io/knyttneve/pen/EBNqPN
 }
 
 #comment-edit-button:focus {
-  color: #171e29;
+  color: #fff;
 }
 
 #comment-edit-button:hover {
-  background-color: #098596;
+  background-color: #099620;
   border-color: #3385ff;
   fill: #06f;
 }
@@ -241,15 +240,17 @@ Credit goes to https://codepen.io/knyttneve/pen/EBNqPN
   fill: #06f;
 }
 
+ /* Mr. Toros added this to keep change title/description buttons symetrical and stylish */
 @media (min-width: 768px) {
   #comment-edit-button {
     min-width: 170px;
   }
 }
 
+
 #title-edit-button {
   align-items: center;
-  background-color: rgb(9, 184, 82);
+  background-color: rgb(21, 108, 240);
   border: 2px solid #06f;
   box-sizing: border-box;
   color: #fff;
@@ -275,11 +276,11 @@ Credit goes to https://codepen.io/knyttneve/pen/EBNqPN
 }
 
 #title-edit-button:focus {
-  color: #171e29;
+  color:  #fff;
 }
 
 #title-edit-button:hover {
-  background-color: #098596;
+  background-color: #099620;
   border-color: #3385ff;
   fill: #06f;
 }
@@ -341,7 +342,6 @@ Credit goes to https://codepen.io/knyttneve/pen/EBNqPN
 
   .FlexSideOne {
     width: 150px;
-
   }
 
   #comments-input {
@@ -350,7 +350,6 @@ Credit goes to https://codepen.io/knyttneve/pen/EBNqPN
     align-items: center;
     margin-left: 20px;
   }
-
 
   .FlexSideTwo {
     width: 25vh;
@@ -362,13 +361,11 @@ Credit goes to https://codepen.io/knyttneve/pen/EBNqPN
     text-align: center;
     color: white;
     flex: 0.5 0 auto;
-
     display: inline-block;
     /* I ADDED THIS NOW FOR TEST HIHI REMOVE ME IF PROBLEM PERSISTS! //Julius Thomsen */
     margin-right: 50px;
     margin-bottom: 20px;
     max-height: 80%;
-
     background: #8A2387;
     /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #F27121, #E94057, #8A2387);
@@ -381,6 +378,7 @@ Credit goes to https://codepen.io/knyttneve/pen/EBNqPN
   .FlexFooter {
     width: 100%;
     text-align: center;
+    padding-left: 20%;
   }
 
   .flex-parent-element {
@@ -391,19 +389,18 @@ Credit goes to https://codepen.io/knyttneve/pen/EBNqPN
 
   #bild-titel {
     padding-bottom: 35px;
-    border: 2px;
+    font-size: larger;
+    /* border: 2px;
     border-color: black;
-    border-radius: 25rem;
-    background-color: white;
-    color: black;
-    border-style: solid;
+    border-radius: 25rem; */
+    /* background-color: white; */
+    color: white;
+    /* border-style: solid; */
     max-width: 25%;
-    margin-left: 19%;
-    margin-top: 21px;
+    margin-left: 16%;
+    margin-top: 1px;
     text-align: center;
     display: inline-block;
-
-    /*position: absolute;*/
   }
 
   #allCommentsArea {
@@ -411,7 +408,6 @@ Credit goes to https://codepen.io/knyttneve/pen/EBNqPN
     min-width: 80%;
     min-height: 60%;
     align-items: flex-end;
-
     display: inline-block;
   }
 
@@ -439,7 +435,10 @@ Credit goes to https://codepen.io/knyttneve/pen/EBNqPN
 /* ------------------------------------ */
 /* DESKTOP SMALL SCREEN */
 
+
 @media (max-width: 1270px) {
+
+  
   #comment-field-text {
     max-width: 90%;
     max-height: 60%;
@@ -448,8 +447,6 @@ Credit goes to https://codepen.io/knyttneve/pen/EBNqPN
     resize: none;
     display: inline-block;
   }
-
-
 
   #comments-display-field {
     min-height: 50%;
@@ -464,10 +461,13 @@ Credit goes to https://codepen.io/knyttneve/pen/EBNqPN
     min-height: 80%;
     flex: 1 0;
     overflow: auto;
+  }
 
-
+  .flex-parent-element{
+    
   }
 }
+
 
 /* DESKTOP SMALL SCREEN */
 /* ------------------------------------ */

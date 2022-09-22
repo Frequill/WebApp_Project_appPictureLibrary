@@ -53,7 +53,7 @@ window.onload = function () {
                 // the index of the 'imgPicked' array is skipped. BASICALLY = If we increment 'i' and skip an index, don't skip over a placement index in 'images
                 for (let i = 0; i < data.albums[0].pictures.length; i++) {
                     if (imgPicked[i] == true) {
-                        images[j] = data.albums[0].path + `/` + data.albums[0].pictures[i].imgLoRes; // All highlighted images are stored in the 'images' array
+                        images[j] = data.albums[0].path + `/` + data.albums[0].pictures[i].imgHiRes; // All highlighted images are stored in the 'images' array
                         console.log("Här är images index " + i + ": " + images[i]);
                         j++; // 'j' is ONLY incremented if an image URL was placed in the 'images' array. This way no empty indexes will be allowed inside it
                     };
