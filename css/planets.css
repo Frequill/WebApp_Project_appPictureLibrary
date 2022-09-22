@@ -121,12 +121,13 @@ button:hover {
   cursor: pointer;
 }
 
+
 #slideshow {
   background: rgb(56, 1, 8);
   box-shadow: 0 0 100px rgb(185, 0, 139);
   visibility: hidden;
-  width: 100%;
-  height: 100%;
+  max-height: 90vh;
+  max-width: 90vh;
 }
 
 .slideshow-modal-class {
@@ -138,18 +139,16 @@ button:hover {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgb(0, 0, 0);   /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.75);  /* Black w/ opacity */
-}
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.75); /* Black w/ opacity */
+} 
 
 .slideshow-modal-content {
-  width: 100%;
   position: absolute;
   float: left;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: fit-content;
   block-size: fit-content;
 }
 
