@@ -1,3 +1,5 @@
+// Stort tack till mina goda kumpaner Toros och Patrik för eran hjälp under projektets gång! Tillsammans har vi åstadkommit någonting fantastiskt!
+
 'use strict'; // No sloppy code!
 import * as lib from '../model/picture-library-browser.js';
 
